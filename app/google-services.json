@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "641148076316",
+    "project_id": "supplyop-cee88",
+    "storage_bucket": "supplyop-cee88.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641148076316:android:b761eb83a4c7206d107ad9",
+        "android_client_info": {
+          "package_name": "com.supplyop.driveop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641148076316-q19nm54uuql5clchb83i09qq7uki0kni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRHGzp-aiSzxTpWXWKxd1Q_nNvU1Gj9mg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641148076316-q19nm54uuql5clchb83i09qq7uki0kni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
