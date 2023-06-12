@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">DriveOP</string>
+    <string name="title_home">Leaderboard</string>
+    <string name="title_dashboard">Shipment</string>
+    <string name="title_notifications">Vehicle Inspection</string>
+    <string name="optimised_route">Optimised Route</string>
+    <string name="shortest_distance">Shortest Distance.....</string>
+    <string name="faster_route">We Prefer Short and Fastest Route to Deliver the shipment</string>
+    <string name="next">Next</string>
+    <string name="login_now">Login now</string>
+    <string name="email">Email:</string>
+    <string name="enter_email_address">Enter your Email address</string>
+    <string name="password">Password:</string>
+    <string name="enter_password">Enter your Password</string>
+    <string name="login">Login</string>
+    <string name="save_your_fuel">Save your fuel</string>
+    <string name="fuel_efficiency">Fuel Efficiency</string>
+    <string name="fuel_discreption">We Prefer Short and Fastest Route to Deliver the shipment</string>
+    <string name="earn_more">Earn More</string>
+    <string name="track_your_earnings">Track your earnings</string>
+    <string name="hello_again">Hello Again!</string>
+    <string name="login_get_started">Login to get Started...</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="forgot">Forgot</string>
+    <string name="Password_notes">Don\'t worry it happens. Please enter the Email address associated with your account.</string>
+    <string name="submit">Submit</string>
+    <string name="enter_new_password">Enter Your New Password</string>
+    <string name="retype_password">Retype Password:</string>
+    <string name="confirm_password">Confirm Your Password</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="enter_otp_note">We have sent you access code vai SMS mobile number verification</string>
+    <string name="don_t_received_otp">Don\'t received the OTP?</string>
+    <string name="resend_code">Resend Code</string>
+    <string name="your_email_verified">Your Email is verified</string>
+    <string name="email_verify_note">We have sent you access code vai SMS mobile number verification</string>
+    <string name="reset">Reset</string>
+</resources>

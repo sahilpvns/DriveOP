@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.fragment.FuelEfficiencyFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/fuel_efficiency"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvRoute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16ssp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/save_your_fuel"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvShortestDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16ssp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/fuel_efficiency"
+        android:textColor="@color/dark_blue"
+        android:textSize="@dimen/_24ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRoute" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvFasterRoute"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16ssp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/fuel_discreption"
+        android:textColor="@color/light_black"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvShortestDistance" />
+
+    <ImageView
+        android:id="@+id/ivSwapImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20ssp"
+        android:src="@drawable/swap_two"
+        app:layout_constraintStart_toStartOf="@id/tvFasterRoute"
+        app:layout_constraintTop_toBottomOf="@+id/tvFasterRoute" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/btnNext"
+        android:layout_width="104dp"
+        android:layout_height="@dimen/_36ssp"
+        android:layout_marginEnd="@dimen/_16ssp"
+        android:background="@drawable/shape_button_details"
+        android:gravity="center"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnLoginNow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnLoginNow" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/btnLoginNow"
+        android:layout_width="104dp"
+        android:layout_height="@dimen/_36ssp"
+        android:layout_marginStart="@dimen/_16ssp"
+        android:layout_marginBottom="@dimen/_25ssp"
+        android:background="@drawable/shape_button_current"
+        android:gravity="center"
+        android:text="@string/login_now"
+        android:textAllCaps="false"
+        android:textColor="@color/green"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="optimised_route">Optimised Route</string>
+    <string name="faster_route">We Prefer Short and Fastest Route to Deliver the shipment</string>
+    <string name="enter_password">Enter your Password</string>
+</resources>
