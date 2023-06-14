@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.replace
 
 
 class ShortestDistanceFragment : Fragment() {
@@ -23,7 +24,7 @@ class ShortestDistanceFragment : Fragment() {
         btn.setOnClickListener {
             val fragment: Fragment = FuelEfficiencyFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            fragmentManager.beginTransaction().replace(com.supplyop.driveop.R.id.shipfram, fragment).commit()
+            fragmentManager.beginTransaction().replace(com.supplyop.driveop.R.id.container, fragment).commit()
         }
 
         return view

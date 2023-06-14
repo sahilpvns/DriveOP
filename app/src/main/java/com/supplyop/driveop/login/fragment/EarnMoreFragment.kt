@@ -1,13 +1,14 @@
 package com.supplyop.driveop.login.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.supplyop.driveop.R
+import com.supplyop.driveop.login.activity.LoginActivity
 
 class EarnMoreFragment : Fragment() {
 
@@ -22,9 +23,8 @@ class EarnMoreFragment : Fragment() {
 
         val btn = view.findViewById<TextView>(R.id.btnNext)
         btn.setOnClickListener {
-            val fragment: Fragment = LoginHomeFragment()
-            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            fragmentManager.beginTransaction().replace(R.id.shipfram, fragment).commit()
+            val intent = Intent(context, LoginActivity::class.java)
+            startActivity(intent)
         }
 
         return view

@@ -28,7 +28,7 @@ class ForgotPasswordFragment : Fragment() {
         btn.setOnClickListener {
             val fragment: Fragment = ResetPasswordFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            fragmentManager.beginTransaction().replace(R.id.shipfram, fragment).commit()
+            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
         }
 
         return view

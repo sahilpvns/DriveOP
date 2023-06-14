@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.replace
 import com.supplyop.driveop.R
 
 
@@ -28,7 +29,7 @@ class FuelEfficiencyFragment : Fragment() {
         btn.setOnClickListener {
             val fragment: Fragment = EarnMoreFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            fragmentManager.beginTransaction().replace(R.id.shipfram, fragment).commit()
+            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
         }
 
 
