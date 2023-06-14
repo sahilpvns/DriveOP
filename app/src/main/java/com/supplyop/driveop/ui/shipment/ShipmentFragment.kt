@@ -32,14 +32,8 @@ class ShipmentFragment : Fragment() {
 
         binding.apply {
             tvCurrent.setOnClickListener {
-
-//                val fragment: Fragment = EarnMoreFragment()
-//                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-//                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
-
                 val intent = Intent(context, WelcomeNoteActivity::class.java)
                 startActivity(intent)
-
             }
             tvCompleted.setOnClickListener {
                 Toast.makeText(context, "Completed", Toast.LENGTH_SHORT).show()
