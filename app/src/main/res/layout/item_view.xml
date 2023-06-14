@@ -29,7 +29,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/_16ssp"
             android:background="@drawable/shape_arrow"
             app:layout_constraintBottom_toBottomOf="@+id/tvShipment"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +39,7 @@
             android:id="@+id/ivCalender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_10ssp"
             android:background="@drawable/shape_calender"
             app:layout_constraintStart_toStartOf="@+id/tvShipment"
             app:layout_constraintTop_toBottomOf="@+id/tvShipment" />
@@ -51,7 +51,7 @@
             android:layout_marginStart="12dp"
             tool:text="31-05-2023 - 31-05-2023"
             android:textColor="#838383"
-            android:textSize="12dp"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@+id/ivCalender"
             app:layout_constraintStart_toEndOf="@+id/ivCalender"
             app:layout_constraintTop_toTopOf="@+id/ivCalender" />
@@ -60,7 +60,7 @@
             android:id="@+id/ivMap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_10ssp"
             android:background="@drawable/shape_map"
             app:layout_constraintStart_toStartOf="@+id/tvShipment"
             app:layout_constraintTop_toBottomOf="@+id/ivCalender" />
@@ -81,14 +81,14 @@
             android:id="@+id/ivTripStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/_10ssp"
             android:background="@drawable/shape_trip_status"
             app:layout_constraintStart_toStartOf="@+id/tvShipment"
             app:layout_constraintTop_toBottomOf="@+id/ivMap" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:layout_width="100dp"
-            android:layout_height="36dp"
+            android:layout_width="@dimen/_100ssp"
+            android:layout_height="@dimen/_36ssp"
             android:background="@drawable/shape_button_details"
             android:gravity="center"
             android:textSize="@dimen/_12ssp"
