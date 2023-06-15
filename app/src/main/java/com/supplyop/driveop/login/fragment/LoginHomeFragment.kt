@@ -5,20 +5,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ProgressBar
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import com.supplyop.driveop.R
+import com.supplyop.driveop.databinding.FragmentLoginHomeBinding
 import com.supplyop.driveop.login.api.method.BaseResponse
 import com.supplyop.driveop.login.api.method.LoginResponse
 import com.supplyop.driveop.login.viewmodel.LoginViewModel
 import com.supplyop.driveop.ui.activity.DashboardActivity
 
 class LoginHomeFragment : Fragment() {
+    private val binding get() = _binding!!
+    private var _binding: FragmentLoginHomeBinding? = null
 
     private val viewModel by viewModels<LoginViewModel>()
 
@@ -29,9 +29,9 @@ class LoginHomeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_login_home, container, false)
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentLoginHomeBinding.inflate(inflater, container, false)
 
 
         viewModel.loginResult.observe(viewLifecycleOwner) {
@@ -55,29 +55,22 @@ class LoginHomeFragment : Fragment() {
             }
         }
 
-
-        val btn = view.findViewById<TextView>(R.id.btnLogin)
-        btn.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             doLogin()
         }
 
-        val forgotPassword = view.findViewById<TextView>(R.id.tvForgotPassword)
-        forgotPassword.setOnClickListener {
+        binding.tvForgotPassword.setOnClickListener {
             val fragment: Fragment = ForgotPasswordFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
         }
 
-        return view
+        return binding.root
     }
 
     private fun doLogin() {
-        val etEmail = view?.findViewById<EditText>(R.id.etEmail)
-        val etPassword = view?.findViewById<EditText>(R.id.etPassword)
-
-        val email = etEmail?.text.toString()
-        val pwd = etPassword?.text.toString()
-
+        val email = binding.etEmail.text.toString()
+        val pwd = binding.etPassword.text.toString()
         viewModel.loginUser(email = email, pwd = pwd)
     }
 
@@ -105,14 +98,12 @@ class LoginHomeFragment : Fragment() {
         activity?.finish()
     }
 
-    val prgbar = view?.findViewById<ProgressBar>(R.id.prgbar)
-
     private fun stopLoading() {
-        prgbar?.visibility = View.GONE
+        binding.prgbar.visibility = View.GONE
     }
 
     private fun showLoading() {
-        prgbar?.visibility = View.VISIBLE
+        binding.prgbar.visibility = View.VISIBLE
     }
 
 

@@ -7,13 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
-import com.supplyop.driveop.R
-import com.supplyop.driveop.databinding.FragmentFuelEfficiencyBinding
 import com.supplyop.driveop.databinding.FragmentShipmentBinding
-import com.supplyop.driveop.login.activity.WelcomeNoteActivity
-import com.supplyop.driveop.login.fragment.EarnMoreFragment
+import com.supplyop.driveop.login.activity.OnboardingActivity
 
 class ShipmentFragment : Fragment() {
 
@@ -32,7 +28,7 @@ class ShipmentFragment : Fragment() {
 
         binding.apply {
             tvCurrent.setOnClickListener {
-                val intent = Intent(context, WelcomeNoteActivity::class.java)
+                val intent = Intent(context, OnboardingActivity::class.java)
                 startActivity(intent)
             }
             tvCompleted.setOnClickListener {
