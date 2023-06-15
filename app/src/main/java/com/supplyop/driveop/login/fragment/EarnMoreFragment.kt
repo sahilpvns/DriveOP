@@ -25,6 +25,14 @@ class EarnMoreFragment : Fragment() {
         btn.setOnClickListener {
             val intent = Intent(context, LoginActivity::class.java)
             startActivity(intent)
+            activity?.finish()
+        }
+
+        val btnLoginNow = view.findViewById<TextView>(R.id.btnLoginNow)
+        btnLoginNow.setOnClickListener {
+            val intent = Intent(context, LoginActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
         }
 
         return view

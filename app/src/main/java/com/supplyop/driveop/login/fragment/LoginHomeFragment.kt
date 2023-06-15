@@ -10,6 +10,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import com.supplyop.driveop.R
 import com.supplyop.driveop.login.api.method.BaseResponse
@@ -60,6 +61,13 @@ class LoginHomeFragment : Fragment() {
             doLogin()
         }
 
+        val forgotPassword = view.findViewById<TextView>(R.id.tvForgotPassword)
+        forgotPassword.setOnClickListener {
+            val fragment: Fragment = ForgotPasswordFragment()
+            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
+        }
+
         return view
     }
 
@@ -94,6 +102,7 @@ class LoginHomeFragment : Fragment() {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
         startActivity(intent)
+        activity?.finish()
     }
 
     val prgbar = view?.findViewById<ProgressBar>(R.id.prgbar)

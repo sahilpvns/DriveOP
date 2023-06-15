@@ -1,5 +1,6 @@
 package com.supplyop.driveop.login.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.replace
+import com.supplyop.driveop.login.activity.LoginActivity
 
 
 class ShortestDistanceFragment : Fragment() {
@@ -25,6 +27,13 @@ class ShortestDistanceFragment : Fragment() {
             val fragment: Fragment = FuelEfficiencyFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             fragmentManager.beginTransaction().replace(com.supplyop.driveop.R.id.container, fragment).commit()
+        }
+
+        val btnLoginNow = view.findViewById<TextView>(com.supplyop.driveop.R.id.btnLoginNow)
+        btnLoginNow.setOnClickListener {
+            val intent = Intent(context, LoginActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
         }
 
         return view
