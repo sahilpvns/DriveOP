@@ -5,37 +5,36 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.supplyop.driveop.R
+import com.supplyop.driveop.databinding.FragmentEarnMoreBinding
 import com.supplyop.driveop.login.activity.LoginActivity
 
 class EarnMoreFragment : Fragment() {
+    private val binding get() = _binding!!
+    private var _binding: FragmentEarnMoreBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_earn_more, container, false)
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentEarnMoreBinding.inflate(inflater, container, false)
 
-        val btn = view.findViewById<TextView>(R.id.btnNext)
-        btn.setOnClickListener {
+        binding.btnNext.setOnClickListener {
             val intent = Intent(context, LoginActivity::class.java)
             startActivity(intent)
             activity?.finish()
         }
 
-        val btnLoginNow = view.findViewById<TextView>(R.id.btnLoginNow)
-        btnLoginNow.setOnClickListener {
+        binding.btnLoginNow.setOnClickListener {
             val intent = Intent(context, LoginActivity::class.java)
             startActivity(intent)
             activity?.finish()
         }
 
-        return view
+        return binding.root
     }
 
 }
