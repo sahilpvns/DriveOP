@@ -39,7 +39,7 @@ class ShortestDistanceFragment : Fragment() {
             activity?.finish()
         }
 
-        return view
+        return binding.root
 
     }
 

@@ -41,7 +41,7 @@ class FuelEfficiencyFragment : Fragment() {
         }
 
 
-        return view
+        return binding.root
     }
 
 
