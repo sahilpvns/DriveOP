@@ -75,12 +75,10 @@ class LoginHomeFragment : Fragment() {
     }
 
     private fun processError(msg: String?) {
-        showToast("Error:$msg")
+        Toast.makeText(context, "$msg Something went wrong", Toast.LENGTH_SHORT).show()
+        stopLoading()
     }
 
-    private fun showToast(msg: String) {
-        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
-    }
 
     private fun processLogin(data: LoginResponse?) {
         if (data?.message.equals("Success")) {
