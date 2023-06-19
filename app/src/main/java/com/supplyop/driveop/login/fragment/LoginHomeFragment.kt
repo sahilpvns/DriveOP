@@ -69,9 +69,9 @@ class LoginHomeFragment : Fragment() {
     }
 
     private fun doLogin() {
-        val email = binding.etEmail.text.toString()
+        val username = binding.etEmail.text.toString()
         val pwd = binding.etPassword.text.toString()
-        viewModel.loginUser(email = email, pwd = pwd)
+        viewModel.loginUser(username = username, pwd = pwd)
     }
 
     private fun processError(msg: String?) {
