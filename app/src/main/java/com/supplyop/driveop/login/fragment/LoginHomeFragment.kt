@@ -84,7 +84,6 @@ class LoginHomeFragment : Fragment() {
         if (data?.message.equals("Success")) {
             navigateToHome()
         } else {
-            Toast.makeText(context, "error", Toast.LENGTH_SHORT).show()
             Toast.makeText(context, data?.message, Toast.LENGTH_SHORT).show()
         }
     }
