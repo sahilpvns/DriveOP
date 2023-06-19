@@ -8,10 +8,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.supplyop.driveop.R
+import com.supplyop.driveop.databinding.FragmentEarnMoreBinding
+import com.supplyop.driveop.databinding.FragmentEmailVerifyBinding
 import com.supplyop.driveop.ui.activity.DashboardActivity
 
 
 class EmailVerifyFragment : Fragment() {
+
+    private val binding get() = _binding!!
+    private var _binding: FragmentEmailVerifyBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,18 +24,16 @@ class EmailVerifyFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_email_verify, container, false)
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        _binding = FragmentEmailVerifyBinding.inflate(inflater, container, false)
 
-        val btn = view.findViewById<TextView>(R.id.btnSubmit)
-        btn.setOnClickListener {
+       binding.btnSubmit.setOnClickListener {
             val intent = Intent(context, DashboardActivity::class.java)
             startActivity(intent)
             activity?.finish()
         }
 
-        return view
+        return binding.root
     }
 
 

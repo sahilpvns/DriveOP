@@ -8,10 +8,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.FragmentManager
 import com.supplyop.driveop.R
+import com.supplyop.driveop.databinding.FragmentFuelEfficiencyBinding
+import com.supplyop.driveop.databinding.FragmentResetPasswordBinding
 
 
 class ResetPasswordFragment : Fragment() {
 
+    private val binding get() = _binding!!
+    private var _binding: FragmentResetPasswordBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,21 +24,17 @@ class ResetPasswordFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_reset_password, container, false)
+        savedInstanceState: Bundle?): View? {
+        _binding = FragmentResetPasswordBinding.inflate(inflater, container, false)
 
-
-        val btn = view.findViewById<TextView>(R.id.btnSubmit)
-        btn.setOnClickListener {
+       binding.btnSubmit.setOnClickListener {
             val fragment: Fragment = EnterOtpFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
         }
 
 
-        return view
+        return binding.root
     }
 
 
