@@ -74,7 +74,7 @@ class LoginHomeFragment : Fragment() {
     }
 
     private fun processError(msg: String?) {
-        Toast.makeText(context, "$msg Something went wrong", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "please fill valid username and password", Toast.LENGTH_SHORT).show()
         stopLoading()
     }
 

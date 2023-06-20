@@ -6,7 +6,7 @@ import retrofit2.http.POST
 
 interface UserApi {
 
-    @POST("http://3.221.107.149:8080/supply_op/login/genrate_token")
+    @POST("http://3.221.107.149:8080/supply-op/login/genrate-token")
     suspend fun loginUser(@Body loginRequest: LoginRequest): Response<LoginResponse>
 
     companion object {
