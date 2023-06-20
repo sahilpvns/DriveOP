@@ -1,24 +1,24 @@
 package com.supplyop.driveop.ui.shipment
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.supplyop.driveop.databinding.FragmentShipmentBinding
+import com.supplyop.driveop.login.activity.LoginActivity
 import com.supplyop.driveop.login.activity.OnboardingActivity
 
 class ShipmentFragment : Fragment() {
 
     private var _binding: FragmentShipmentBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-
     private val binding get() = _binding!!
+
+    var sharedPreferences: SharedPreferences? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -26,13 +26,23 @@ class ShipmentFragment : Fragment() {
 
         _binding = FragmentShipmentBinding.inflate(inflater, container, false)
 
+        sharedPreferences = activity?.getSharedPreferences(SHARED_PREF_NAME, AppCompatActivity.MODE_PRIVATE)
+
         binding.apply {
             tvCurrent.setOnClickListener {
                 val intent = Intent(context, OnboardingActivity::class.java)
                 startActivity(intent)
             }
             tvCompleted.setOnClickListener {
-                Toast.makeText(context, "Completed", Toast.LENGTH_SHORT).show()
+                val editor = sharedPreferences?.edit()
+                editor?.clear()
+                editor?.apply()
+                activity?.finish()
+
+                val intent = Intent(context, LoginActivity::class.java)
+                startActivity(intent)
+                activity?.finish()
+
             }
         }
 
@@ -43,5 +53,12 @@ class ShipmentFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+
+    companion object {
+        private const val SHARED_PREF_NAME = "MyPref"
+        private const val KEY_NAME = "name"
+        private const val KEY_NUMBER = "number"
     }
 }
