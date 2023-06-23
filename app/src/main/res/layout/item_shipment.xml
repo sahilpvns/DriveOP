@@ -3,26 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tool="http://schemas.android.com/tools"
-    android:layout_marginVertical="@dimen/_8ssp"
-    app:cardBackgroundColor="#CAD7F8"
-    app:cardCornerRadius="@dimen/_10ssp"
-    app:layout_constraintStart_toStartOf="parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginVertical="@dimen/_8sdp"
+    app:cardBackgroundColor="@color/shipment_card_view_bg"
+    app:cardCornerRadius="@dimen/_10sdp"
     app:layout_constraintTop_toTopOf="parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/_10ssp">
+        android:layout_margin="@dimen/_10sdp">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvShipment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/_16ssp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Shipment- #2732682"
             android:textColor="@android:color/black"
-            tool:text="Shipment- #2732682"
-            android:textStyle="bold"
+            android:textSize="@dimen/_14sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,16 +47,17 @@
             android:id="@+id/tvDateTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            tool:text="31-05-2023 - 31-05-2023"
-            android:textColor="#838383"
-            android:textSize="@dimen/_12ssp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="31-05-2023 - 31-05-2023"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="@+id/ivCalender"
             app:layout_constraintStart_toEndOf="@+id/ivCalender"
             app:layout_constraintTop_toTopOf="@+id/ivCalender" />
 
         <ImageView
-            android:id="@+id/ivMap"
+            android:id="@+id/ivRoadAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10ssp"
@@ -69,13 +69,14 @@
             android:id="@+id/tvAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:textSize="@dimen/_12ssp"
-            android:textColor="#838383"
-            tool:text="Sikandarpur - Golf course road"
-            app:layout_constraintBottom_toBottomOf="@+id/ivMap"
-            app:layout_constraintStart_toEndOf="@+id/ivMap"
-            app:layout_constraintTop_toTopOf="@+id/ivMap" />
+            android:layout_marginStart="@dimen/_12sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Sikandarpur - Golf course road"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivRoadAddress"
+            app:layout_constraintStart_toEndOf="@+id/ivRoadAddress"
+            app:layout_constraintTop_toTopOf="@+id/ivRoadAddress" />
 
         <ImageView
             android:id="@+id/ivTripStatus"
@@ -84,19 +85,21 @@
             android:layout_marginTop="@dimen/_10ssp"
             android:background="@drawable/shape_trip_status"
             app:layout_constraintStart_toStartOf="@+id/tvShipment"
-            app:layout_constraintTop_toBottomOf="@+id/ivMap" />
+            app:layout_constraintTop_toBottomOf="@+id/ivRoadAddress" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:layout_width="@dimen/_100ssp"
-            android:layout_height="@dimen/_36ssp"
+            android:id="@+id/tvDetails"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_30sdp"
             android:background="@drawable/shape_button_details"
+            android:fontFamily="@font/poppins_medium"
             android:gravity="center"
-            android:textSize="@dimen/_12ssp"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
-            tool:text="Details"
+            android:textSize="@dimen/_12sdp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivTripStatus" />
+            app:layout_constraintTop_toBottomOf="@+id/ivTripStatus"
+            android:text="Details" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

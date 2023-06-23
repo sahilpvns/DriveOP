@@ -8,45 +8,45 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvCurrent"
-        android:layout_width="138dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:background="@drawable/shape_button_current"
-        android:backgroundTint="#00006A"
-        android:fontFamily="sans-serif-medium"
+        android:backgroundTint="@color/default_blue"
+        android:fontFamily="@font/poppins_medium"
         android:gravity="center"
-        android:text="Current"
+        android:text="@string/current"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/_16ssp"
+        android:textSize="@dimen/_12sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvCompleted"
-        android:layout_width="138dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="30dp"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
         android:background="@drawable/shape_button_current"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/poppins_medium"
         android:gravity="center"
-        android:text="Completed"
-        android:textColor="#00006A"
-        android:textSize="16dp"
+        android:text="@string/completed"
+        android:textColor="@color/default_blue"
+        android:textSize="@dimen/_12sdp"
         app:layout_constraintBottom_toBottomOf="@+id/tvCurrent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvCurrent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvItemView"
+        android:id="@+id/rvItemShipment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:paddingHorizontal="8dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:paddingHorizontal="@dimen/_8sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCurrent"
         tools:itemCount="8"
-        tools:listitem="@layout/item_view" />
+        tools:listitem="@layout/item_shipment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

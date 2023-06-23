@@ -34,4 +34,9 @@
     <string name="your_email_verified">Your Email is verified</string>
     <string name="email_verify_note">We have sent you access code vai SMS mobile number verification</string>
     <string name="reset">Reset</string>
+    <string name="current">Current</string>
+    <string name="completed">Completed</string>
+    <string name="shipments">Shipments</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="vehicle_inspection">Vehicle Inspection</string>
 </resources>
