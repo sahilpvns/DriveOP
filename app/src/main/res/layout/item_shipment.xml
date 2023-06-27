@@ -24,49 +24,33 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/ivCalender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10ssp"
-            android:background="@drawable/shape_calender"
-            app:layout_constraintStart_toStartOf="@+id/tvShipment"
-            app:layout_constraintTop_toBottomOf="@+id/tvShipment" />
-
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvDateTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_12sdp"
             android:fontFamily="@font/poppins_regular"
+            android:layout_marginTop="@dimen/_5sdp"
             android:text="31-05-2023 - 31-05-2023"
+            android:drawableStart="@drawable/shape_calender"
+            android:drawablePadding="@dimen/_8sdp"
             android:textColor="@color/light_black"
             android:textSize="@dimen/_12sdp"
-            app:layout_constraintBottom_toBottomOf="@+id/ivCalender"
-            app:layout_constraintStart_toEndOf="@+id/ivCalender"
-            app:layout_constraintTop_toTopOf="@+id/ivCalender" />
-
-        <ImageView
-            android:id="@+id/ivRoadAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10ssp"
-            android:background="@drawable/shape_map"
-            app:layout_constraintStart_toStartOf="@+id/tvShipment"
-            app:layout_constraintTop_toBottomOf="@+id/ivCalender" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvShipment" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_12sdp"
             android:fontFamily="@font/poppins_regular"
+            android:layout_marginTop="@dimen/_5sdp"
             android:text="Sikandarpur - Golf course road"
             android:textColor="@color/light_black"
             android:textSize="@dimen/_12sdp"
-            app:layout_constraintBottom_toBottomOf="@+id/ivRoadAddress"
-            app:layout_constraintStart_toEndOf="@+id/ivRoadAddress"
-            app:layout_constraintTop_toTopOf="@+id/ivRoadAddress" />
+            android:drawableStart="@drawable/shape_map"
+            android:drawablePadding="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDateTime" />
 
         <ImageView
             android:id="@+id/ivTripStatus"
@@ -75,7 +59,7 @@
             android:layout_marginTop="@dimen/_10ssp"
             android:background="@drawable/shape_trip_status"
             app:layout_constraintStart_toStartOf="@+id/tvShipment"
-            app:layout_constraintTop_toBottomOf="@+id/ivRoadAddress" />
+            app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
 
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/progressTruck"
@@ -83,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_12sdp"
             android:max="100"
-            android:progress="60"
+            android:progress="20"
             app:layout_constraintBottom_toBottomOf="@+id/ivTripStatus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivTripStatus"
