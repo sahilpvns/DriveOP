@@ -1,344 +1,365 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginHorizontal="@dimen/_10sdp"
     tools:context=".ui.shipment.ShipmentDetailsFragment">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvShipment"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:drawableEnd=""
-        android:fontFamily="@font/poppins_medium"
-        android:text="Shipment- #2732682"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/_14sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginHorizontal="@dimen/_10sdp">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvDateTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:drawableStart="@drawable/shape_calender"
-        android:drawablePadding="@dimen/_8sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="31-05-2023 - 31-05-2023"
-        android:textColor="@color/light_black"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvShipment" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvShipment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawableEnd=""
+            android:fontFamily="@font/poppins_medium"
+            android:text="Shipment- #2732682"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:drawableStart="@drawable/shape_map"
-        android:drawablePadding="@dimen/_8sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Sikandarpur - Golf course road"
-        android:textColor="@color/light_black"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDateTime" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:drawableStart="@drawable/shape_calender"
+            android:drawablePadding="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="31-05-2023 - 31-05-2023"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvShipment" />
 
-    <ImageView
-        android:id="@+id/ivTripStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10ssp"
-        android:background="@drawable/shape_trip_status"
-        app:layout_constraintStart_toStartOf="@+id/tvShipment"
-        app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:drawableStart="@drawable/shape_map"
+            android:drawablePadding="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Sikandarpur - Golf course road"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDateTime" />
 
-    <com.google.android.material.progressindicator.LinearProgressIndicator
-        android:id="@+id/progressTruck"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_12sdp"
-        android:max="100"
-        android:progress="20"
-        app:layout_constraintBottom_toBottomOf="@+id/ivTripStatus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivTripStatus"
-        app:layout_constraintTop_toTopOf="@+id/ivTripStatus" />
+        <ImageView
+            android:id="@+id/ivTripStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:background="@drawable/shape_trip_status"
+            app:layout_constraintStart_toStartOf="@+id/tvShipment"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvInProgress"
-        android:layout_width="@dimen/_140sdp"
-        android:layout_height="@dimen/_30sdp"
-        android:layout_marginStart="@dimen/_5sdp"
-        android:layout_marginTop="@dimen/_16sdp"
-        android:background="@drawable/shape_inprogress"
-        android:gravity="center"
-        android:backgroundTint="#FFA800"
-        android:drawableEnd="@drawable/arrow_down"
-        android:drawablePadding="@dimen/_8sdp"
-        android:fontFamily="@font/poppins_medium"
-        android:paddingHorizontal="@dimen/_10sdp"
-        android:text="Inprogress"
-        android:textAllCaps="false"
-        android:textColor="#FFA800"
-        android:textSize="@dimen/_10sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvEstimateTime"
-        app:layout_constraintTop_toBottomOf="@+id/ivTripStatus" />
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressTruck"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:max="100"
+            android:progress="20"
+            app:layout_constraintBottom_toBottomOf="@+id/ivTripStatus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivTripStatus"
+            app:layout_constraintTop_toTopOf="@+id/ivTripStatus" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvEstimateTime"
-        android:layout_width="@dimen/_140sdp"
-        android:layout_height="@dimen/_30sdp"
-        android:layout_marginEnd="@dimen/_5sdp"
-        android:background="@drawable/shape_estimate_time"
-        android:drawableStart="@drawable/shape_watch_time"
-        android:drawablePadding="@dimen/_5sdp"
-        android:fontFamily="@font/poppins_medium"
-        android:gravity="center"
-        android:paddingHorizontal="@dimen/_10sdp"
-        android:text="Estimated time: 4 Hr."
-        android:textAllCaps="false"
-        android:textColor="@color/light_black_2"
-        android:textSize="@dimen/_10sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvInProgress"
-        app:layout_constraintEnd_toStartOf="@+id/tvInProgress"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvInProgress" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvInProgress"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/shape_inprogress"
+            android:backgroundTint="#FFA800"
+            android:drawableEnd="@drawable/arrow_down"
+            android:drawablePadding="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:text="Inprogress"
+            android:textAllCaps="false"
+            android:textColor="#FFA800"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvEstimateTime"
+            app:layout_constraintTop_toBottomOf="@+id/ivTripStatus" />
 
-    <View
-        android:id="@+id/viewLine"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_1sdp"
-        android:layout_marginTop="@dimen/_12sdp"
-        android:background="#D1DFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEstimateTime" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvEstimateTime"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@drawable/shape_estimate_time"
+            android:drawableStart="@drawable/shape_watch_time"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:text="Estimated time: 4 Hr."
+            android:textAllCaps="false"
+            android:textColor="@color/light_black_2"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvInProgress"
+            app:layout_constraintEnd_toStartOf="@+id/tvInProgress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvInProgress" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Name"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/_14sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewLine" />
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="#D1DFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEstimateTime" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_50sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Sahil Prajapati"
-        android:textColor="@color/light_black"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewLine" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Name"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewLine" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvDeliverTo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Deliver To"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/_14sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_50sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Sahil Prajapati"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewLine" />
 
-    <ImageView
-        android:id="@+id/icMapAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10ssp"
-        android:background="@drawable/shape_trip_status"
-        app:layout_constraintStart_toStartOf="@+id/tvShipment"
-        app:layout_constraintTop_toBottomOf="@+id/tvDeliverTo" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDeliverTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Deliver To"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvAddressDeliver"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_5sdp"
-        android:drawablePadding="@dimen/_8sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="@string/deliver_address"
-        android:textColor="@color/light_black"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/icMapAddress"
-        app:layout_constraintTop_toTopOf="@+id/icMapAddress" />
+        <ImageView
+            android:id="@+id/icMapAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:background="@drawable/shape_trip_status"
+            app:layout_constraintStart_toStartOf="@+id/tvShipment"
+            app:layout_constraintTop_toBottomOf="@+id/tvDeliverTo" />
 
-    <ImageView
-        android:id="@+id/ivDirection"
-        android:layout_width="@dimen/_45sdp"
-        android:layout_height="@dimen/_45sdp"
-        android:layout_marginTop="@dimen/_15ssp"
-        android:background="@drawable/direction"
-        app:layout_constraintStart_toStartOf="@+id/tvShipment"
-        app:layout_constraintTop_toBottomOf="@+id/tvAddressDeliver" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvAddressDeliver"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:drawablePadding="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/deliver_address"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/icMapAddress"
+            app:layout_constraintTop_toTopOf="@+id/icMapAddress" />
 
-    <ImageView
-        android:id="@+id/ivChat"
-        android:layout_width="@dimen/_45sdp"
-        android:layout_height="@dimen/_45sdp"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:background="@drawable/chat"
-        app:layout_constraintBottom_toBottomOf="@+id/ivDirection"
-        app:layout_constraintStart_toEndOf="@+id/ivDirection"
-        app:layout_constraintTop_toTopOf="@+id/ivDirection" />
+        <ImageView
+            android:id="@+id/ivDirection"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_15ssp"
+            android:background="@drawable/direction"
+            app:layout_constraintStart_toStartOf="@+id/tvShipment"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddressDeliver" />
 
-    <ImageView
-        android:id="@+id/ivCall"
-        android:layout_width="@dimen/_45sdp"
-        android:layout_height="@dimen/_45sdp"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:background="@drawable/chat"
-        app:layout_constraintBottom_toBottomOf="@+id/ivChat"
-        app:layout_constraintStart_toEndOf="@+id/ivChat"
-        app:layout_constraintTop_toTopOf="@+id/ivChat" />
+        <ImageView
+            android:id="@+id/ivChat"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:background="@drawable/chat"
+            app:layout_constraintBottom_toBottomOf="@+id/ivDirection"
+            app:layout_constraintStart_toEndOf="@+id/ivDirection"
+            app:layout_constraintTop_toTopOf="@+id/ivDirection" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvItems"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Items"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/_14sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivCall" />
+        <ImageView
+            android:id="@+id/ivCall"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:background="@drawable/chat"
+            app:layout_constraintBottom_toBottomOf="@+id/ivChat"
+            app:layout_constraintStart_toEndOf="@+id/ivChat"
+            app:layout_constraintTop_toTopOf="@+id/ivChat" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvItemNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_50sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="6 pcs"
-        android:textColor="@color/light_black"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvItems"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvItems" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Items"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivCall" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvManifest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Manifest"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/_14sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvItems" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvItemNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_50sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="6 pcs"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvItems"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvItems" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvManifestNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_50sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="fuhfw83hh38"
-        android:textColor="@color/light_black"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvManifest"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvManifest" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvManifest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Manifest"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvItems" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvCurrentETA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Current ETA"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/_14sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvManifest" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvManifestNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_50sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="fuhfw83hh38"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvManifest"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvManifest" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvETA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_50sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="7:32 Pm"
-        android:textColor="@color/light_black"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvCurrentETA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvCurrentETA" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvCurrentETA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Current ETA"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvManifest" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvPriority"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Priority"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/_14sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCurrentETA" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvETA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_50sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="7:32 Pm"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCurrentETA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvCurrentETA" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvPriorityNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_50sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Standard"
-        android:textColor="@color/light_black"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvPriority"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvPriority" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvPriority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Priority"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCurrentETA" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvDispatch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_30sdp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Dispatch Team"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/_14sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPriority" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvPriorityNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_50sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Standard"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPriority"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvPriority" />
 
-    <ImageView
-        android:id="@+id/ivChat2"
-        android:layout_width="@dimen/_45sdp"
-        android:layout_height="@dimen/_45sdp"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:background="@drawable/direction"
-        app:layout_constraintBottom_toBottomOf="@+id/tvDispatch"
-        app:layout_constraintStart_toEndOf="@+id/tvDispatch"
-        app:layout_constraintTop_toTopOf="@+id/tvDispatch" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDispatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Dispatch Team"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPriority" />
 
-    <ImageView
-        android:id="@+id/ivCall2"
-        android:layout_width="@dimen/_45sdp"
-        android:layout_height="@dimen/_45sdp"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:background="@drawable/chat"
-        app:layout_constraintBottom_toBottomOf="@+id/ivChat2"
-        app:layout_constraintStart_toEndOf="@+id/ivChat2"
-        app:layout_constraintTop_toTopOf="@+id/ivChat2" />
+        <ImageView
+            android:id="@+id/ivChat2"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:background="@drawable/direction"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDispatch"
+            app:layout_constraintStart_toEndOf="@+id/tvDispatch"
+            app:layout_constraintTop_toTopOf="@+id/tvDispatch" />
 
+        <ImageView
+            android:id="@+id/ivCall2"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:background="@drawable/chat"
+            app:layout_constraintBottom_toBottomOf="@+id/ivChat2"
+            app:layout_constraintStart_toEndOf="@+id/ivChat2"
+            app:layout_constraintTop_toTopOf="@+id/ivChat2" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvLetsGo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginVertical="@dimen/_16sdp"
+            android:background="@drawable/shape_button_details"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="Let’s Go"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivChat2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
