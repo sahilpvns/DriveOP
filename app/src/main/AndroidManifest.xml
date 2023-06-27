@@ -11,12 +11,14 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/app_icon"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.activity.ShipmentDetailsActivity"
+            android:exported="false" />
         <activity
             android:name=".login.activity.OnboardingActivity"
             android:exported="false" />
@@ -36,7 +38,6 @@
         <activity
             android:name=".ui.activity.DashboardActivity"
             android:exported="true" />
-
     </application>
 
 </manifest>

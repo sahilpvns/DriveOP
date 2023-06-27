@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginVertical="@dimen/_8sdp"
     app:cardBackgroundColor="@color/shipment_card_view_bg"
     app:cardCornerRadius="@dimen/_10sdp"
@@ -16,7 +15,7 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvShipment"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
             android:text="Shipment- #2732682"
@@ -24,15 +23,6 @@
             android:textSize="@dimen/_14sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_16ssp"
-            android:background="@drawable/shape_arrow"
-            app:layout_constraintBottom_toBottomOf="@+id/tvShipment"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvShipment" />
 
         <ImageView
             android:id="@+id/ivCalender"
@@ -87,19 +77,38 @@
             app:layout_constraintStart_toStartOf="@+id/tvShipment"
             app:layout_constraintTop_toBottomOf="@+id/ivRoadAddress" />
 
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressTruck"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:max="100"
+            android:progress="60"
+            app:layout_constraintBottom_toBottomOf="@+id/ivTripStatus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivTripStatus"
+            app:layout_constraintTop_toTopOf="@+id/ivTripStatus" />
+
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvDetails"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             android:background="@drawable/shape_button_details"
             android:fontFamily="@font/poppins_medium"
             android:gravity="center"
+            android:text="Details"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivTripStatus"
-            android:text="Details" />
+            app:layout_constraintTop_toBottomOf="@+id/ivTripStatus" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupIds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="ivTripStatus,progressTruck,tvDetails" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

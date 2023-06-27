@@ -2,9 +2,14 @@ package com.supplyop.driveop.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.ItemShipmentBinding
+import com.supplyop.driveop.ui.shipment.ShipmentDetailsFragment
+
 
 class ShipmentAdapter() : RecyclerView.Adapter<ShipmentAdapter.ViewHolder>() {
 
@@ -17,19 +22,46 @@ class ShipmentAdapter() : RecyclerView.Adapter<ShipmentAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ShipmentAdapter.ViewHolder, position: Int) {
+        holder.itemBinding.tvShipment.setOnClickListener {
+
+//            if (holder.itemBinding.tvShipment.visibility == View.GONE) {
+//                holder.itemBinding.tvShipment.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.arrow_down, 0)
+//            } else {
+//                holder.itemBinding.tvShipment.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.arrow_up, 0)
+//            }
+
+        }
+
+
         holder.itemBinding.tvDetails.setOnClickListener {
-            Toast.makeText(it.context, "click Details", Toast.LENGTH_SHORT).show()
+
+//            val myFragment: Fragment = ShipmentDetailsFragment()
+//            (it.context as FragmentActivity).supportFragmentManager.beginTransaction()
+//                .replace(com.supplyop.driveop.R.id.nav_host_fragment_activity_main, myFragment)
+//                .addToBackStack(null).commit()
+
+            //    val fragment: Fragment = ShipmentDetailsFragment()
+            //    (it.context as FragmentActivity).supportFragmentManager.beginTransaction().replace(com.supplyop.driveop.R.id.containerDashboard, fragment).commitAllowingStateLoss()
+
+            val fragment: Fragment = ShipmentDetailsFragment()
+            val fragmentManager: FragmentManager =
+                (it.context as FragmentActivity).supportFragmentManager
+            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
+
+
         }
     }
 
     override fun getItemCount() = 15
 
+
     inner class ViewHolder(var itemBinding: ItemShipmentBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
+
 //        fun bind(item: String) {
 //            binding.apply {
-//                tvShipment.text = String.format("Shipment- #2732682")
-//                tvAddress.text = String.format("31-05-2023 - 31-05-2023")
+//                tvShipment.text = String.format("Shipment- #2732682 adfqf")
+//                tvAddress.text = String.format("31-05-2023 - 31-05-2023 asdfqwf")
 //            }
 //        }
     }
