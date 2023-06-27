@@ -16,7 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
-            android:drawableEnd=""
             android:fontFamily="@font/poppins_medium"
             android:text="Shipment- #2732682"
             android:textColor="@android:color/black"
@@ -75,7 +74,7 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvInProgress"
-            android:layout_width="@dimen/_140sdp"
+            android:layout_width="@dimen/_120sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_16sdp"
@@ -96,7 +95,7 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvEstimateTime"
-            android:layout_width="@dimen/_140sdp"
+            android:layout_width="@dimen/_120sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_5sdp"
             android:background="@drawable/shape_estimate_time"
@@ -347,7 +346,7 @@
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvLetsGo"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_30sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_marginVertical="@dimen/_16sdp"
             android:background="@drawable/shape_button_details"
             android:fontFamily="@font/poppins_medium"
