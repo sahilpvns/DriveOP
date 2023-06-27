@@ -11,6 +11,7 @@
     //DriveOP app color
     <color name="dark_blue">#00006A</color>
     <color name="light_black">#838383</color>
+    <color name="light_black_2">#ABABAB</color>
     <color name="green">#41A950</color>
     <color name="light_second_black">#202020</color>
     <color name="default_blue">#00006A</color>
