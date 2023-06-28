@@ -11,7 +11,7 @@ class OnboardingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_welcome_note)
+        setContentView(R.layout.activity_onboading)
 
         supportActionBar?.hide()
 

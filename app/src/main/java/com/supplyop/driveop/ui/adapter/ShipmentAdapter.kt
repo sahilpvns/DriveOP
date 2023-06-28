@@ -1,14 +1,11 @@
 package com.supplyop.driveop.ui.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
-import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.ItemShipmentBinding
-import com.supplyop.driveop.ui.shipment.ShipmentDetailsFragment
+import com.supplyop.driveop.ui.activity.ShipmentDetailsActivity
 
 
 class ShipmentAdapter() : RecyclerView.Adapter<ShipmentAdapter.ViewHolder>() {
@@ -32,21 +29,16 @@ class ShipmentAdapter() : RecyclerView.Adapter<ShipmentAdapter.ViewHolder>() {
 
         }
 
-
         holder.itemBinding.tvDetails.setOnClickListener {
 
-//            val myFragment: Fragment = ShipmentDetailsFragment()
-//            (it.context as FragmentActivity).supportFragmentManager.beginTransaction()
-//                .replace(com.supplyop.driveop.R.id.nav_host_fragment_activity_main, myFragment)
-//                .addToBackStack(null).commit()
+            // best code
+//            val fragment: Fragment = ShipmentDetailsFragment()
+//            val fragmentManager: FragmentManager =
+//                (it.context as FragmentActivity).supportFragmentManager
+//            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
 
-            //    val fragment: Fragment = ShipmentDetailsFragment()
-            //    (it.context as FragmentActivity).supportFragmentManager.beginTransaction().replace(com.supplyop.driveop.R.id.containerDashboard, fragment).commitAllowingStateLoss()
-
-            val fragment: Fragment = ShipmentDetailsFragment()
-            val fragmentManager: FragmentManager =
-                (it.context as FragmentActivity).supportFragmentManager
-            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
+            val intent = Intent(it.context, ShipmentDetailsActivity::class.java)
+            it.context.startActivity(intent)
 
 
         }
