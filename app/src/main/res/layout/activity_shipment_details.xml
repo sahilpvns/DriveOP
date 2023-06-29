@@ -25,45 +25,57 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
-            android:orientation="horizontal"
-            android:paddingVertical="@dimen/_5sdp">
+            android:orientation="horizontal">
 
-            <com.google.android.material.textview.MaterialTextView
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/tvGeneral"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/_30sdp"
+                android:layout_height="@dimen/_35sdp"
                 android:layout_marginStart="@dimen/_10sdp"
-                android:background="@drawable/shape_button_current"
-                android:backgroundTint="@color/default_blue"
                 android:fontFamily="@font/poppins_medium"
-                android:gravity="center"
-                android:paddingHorizontal="@dimen/_20sdp"
+                android:backgroundTint="@color/dark_blue"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:includeFontPadding="false"
+                app:cornerRadius="@dimen/_16sdp"
+                app:strokeColor="@color/dark_blue"
+                android:paddingHorizontal="@dimen/_15sdp"
                 android:text="General Details"
-                android:textColor="@android:color/white"
+                app:strokeWidth="@dimen/_1sdp"
                 android:textSize="@dimen/_12sdp" />
 
-            <com.google.android.material.textview.MaterialTextView
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/tvComment"
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_30sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
                 android:layout_marginStart="@dimen/_10sdp"
-                android:background="@drawable/shape_button_current"
                 android:fontFamily="@font/poppins_medium"
-                android:gravity="center"
-                android:text="Comments"
+                android:backgroundTint="@color/white"
+                android:textAllCaps="false"
+                android:includeFontPadding="false"
                 android:textColor="@color/default_blue"
+                app:cornerRadius="@dimen/_16sdp"
+                app:strokeColor="@color/dark_blue"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:text="Comments"
+                app:strokeWidth="@dimen/_1sdp"
                 android:textSize="@dimen/_12sdp" />
 
-            <com.google.android.material.textview.MaterialTextView
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/tvDigitalCopies"
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginHorizontal="@dimen/_10sdp"
-                android:background="@drawable/shape_button_current"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:fontFamily="@font/poppins_medium"
-                android:gravity="center"
-                android:text="Digital Copies"
+                android:backgroundTint="@color/white"
+                android:textAllCaps="false"
+                android:layout_marginEnd="@dimen/_10sdp"
                 android:textColor="@color/default_blue"
+                app:cornerRadius="@dimen/_16sdp"
+                app:strokeColor="@color/dark_blue"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:text="Digital Copies"
+                app:strokeWidth="@dimen/_1sdp"
                 android:textSize="@dimen/_12sdp" />
         </LinearLayout>
 

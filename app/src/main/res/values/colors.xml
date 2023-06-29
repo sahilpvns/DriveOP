@@ -16,4 +16,6 @@
     <color name="light_second_black">#202020</color>
     <color name="default_blue">#00006A</color>
     <color name="shipment_card_view_bg">#CAD7F8</color>
+    <color name="yellow">#FFA800</color>
+    <color name="yellow_20">#33FFA800</color>
 </resources>
