@@ -1,13 +1,16 @@
 package com.supplyop.driveop.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.ActivityShipmentDetailsBinding
+import com.supplyop.driveop.login.activity.OnboardingActivity
 import com.supplyop.driveop.login.fragment.CommentsFragment
 import com.supplyop.driveop.login.fragment.DigitalCopiesFragment
 import com.supplyop.driveop.login.fragment.ShipmentGeneralDetailsFragment
@@ -28,8 +31,7 @@ class ShipmentDetailsActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) { // initial transaction should be wrapped like this
             val fragment: Fragment = ShipmentGeneralDetailsFragment()
-            supportFragmentManager.beginTransaction().replace(R.id.shipment_container, fragment)
-                .commitAllowingStateLoss()
+            supportFragmentManager.beginTransaction().replace(R.id.shipment_container, fragment).commitAllowingStateLoss()
         }
 
         binding?.apply {

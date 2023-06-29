@@ -1,18 +1,19 @@
 package com.supplyop.driveop.ui.shipment
 
-import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.FragmentShipmentBinding
-import com.supplyop.driveop.login.activity.LoginActivity
-import com.supplyop.driveop.login.activity.OnboardingActivity
+import com.supplyop.driveop.login.fragment.ShipmentCompletedFragment
+import com.supplyop.driveop.login.fragment.ShipmentCurrentFragment
 import com.supplyop.driveop.ui.adapter.ShipmentAdapter
 
 class ShipmentFragment : Fragment() {
@@ -27,30 +28,38 @@ class ShipmentFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val shipmentViewModel = ViewModelProvider(this)[ShipmentViewModel::class.java]
-
         _binding = FragmentShipmentBinding.inflate(inflater, container, false)
 
         sharedPreferences = activity?.getSharedPreferences(SHARED_PREF_NAME, AppCompatActivity.MODE_PRIVATE)
 
         binding.apply {
             tvCurrent.setOnClickListener {
-                val intent = Intent(context, OnboardingActivity::class.java)
-                startActivity(intent)
+                val fragment: Fragment = ShipmentCurrentFragment()
+                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
             }
+
             tvCompleted.setOnClickListener {
-                val editor = sharedPreferences?.edit()
-                editor?.clear()
-                editor?.apply()
-                activity?.finish()
+                val fragment: Fragment = ShipmentCompletedFragment()
+                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
 
-                val intent = Intent(context, LoginActivity::class.java)
-                startActivity(intent)
-                activity?.finish()
+//                val editor = sharedPreferences?.edit()
+//                editor?.clear()
+//                editor?.apply()
+//                activity?.finish()
+//
+//                val intent = Intent(context, LoginActivity::class.java)
+//                startActivity(intent)
+//                activity?.finish()
 
             }
 
-            binding.rvItemShipment.layoutManager = LinearLayoutManager(context)
-            binding.rvItemShipment.adapter = ShipmentAdapter()
+            if (savedInstanceState == null) { // initial transaction should be wrapped like this
+                val fragment: Fragment = ShipmentCurrentFragment()
+                activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.container, fragment)?.commitAllowingStateLoss()
+            }
+
         }
 
 
@@ -65,7 +74,5 @@ class ShipmentFragment : Fragment() {
 
     companion object {
         private const val SHARED_PREF_NAME = "MyPref"
-        private const val KEY_NAME = "name"
-        private const val KEY_NUMBER = "number"
     }
 }
