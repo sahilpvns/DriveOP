@@ -2,8 +2,10 @@ package com.supplyop.driveop.ui.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.ItemShipmentBinding
 import com.supplyop.driveop.ui.activity.ShipmentDetailsActivity
 
@@ -21,25 +23,20 @@ class ShipmentAdapter() : RecyclerView.Adapter<ShipmentAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ShipmentAdapter.ViewHolder, position: Int) {
         holder.itemBinding.tvShipment.setOnClickListener {
 
-//            if (holder.itemBinding.tvShipment.visibility == View.GONE) {
+//            var flag = true
+//            if (flag) {
 //                holder.itemBinding.tvShipment.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.arrow_down, 0)
+//                flag = true
 //            } else {
 //                holder.itemBinding.tvShipment.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.arrow_up, 0)
+//               flag=  false
 //            }
 
         }
 
         holder.itemBinding.tvDetails.setOnClickListener {
-
-            // best code
-//            val fragment: Fragment = ShipmentDetailsFragment()
-//            val fragmentManager: FragmentManager =
-//                (it.context as FragmentActivity).supportFragmentManager
-//            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
-
             val intent = Intent(it.context, ShipmentDetailsActivity::class.java)
             it.context.startActivity(intent)
-
 
         }
     }
