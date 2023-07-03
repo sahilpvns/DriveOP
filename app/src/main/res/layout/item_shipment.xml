@@ -63,13 +63,14 @@
             app:layout_constraintStart_toStartOf="@+id/tvShipment"
             app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
 
-        <com.google.android.material.progressindicator.LinearProgressIndicator
+        <SeekBar
             android:id="@+id/progressTruck"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_12sdp"
             android:max="100"
             android:progress="20"
+            android:thumb="@drawable/truck25x"
             app:layout_constraintBottom_toBottomOf="@+id/ivTripStatus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivTripStatus"

@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.supplyop.driveop.R
-import com.supplyop.driveop.databinding.FragmentEarnMoreBinding
 import com.supplyop.driveop.databinding.FragmentShipmentCurrentBinding
 import com.supplyop.driveop.ui.adapter.ShipmentAdapter
 
