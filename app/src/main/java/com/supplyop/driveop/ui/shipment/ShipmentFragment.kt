@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources.getColorStateList
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
@@ -33,12 +35,27 @@ class ShipmentFragment : Fragment() {
 
         binding.apply {
             tvCurrent.setOnClickListener {
+
+                tvCurrent.backgroundTintList= it.context.getColorStateList(R.color.dark_blue)
+                tvCurrent.setTextColor(ContextCompat.getColor(it.context, R.color.white))
+
+                tvCompleted.backgroundTintList= it.context.getColorStateList(R.color.white)
+                tvCompleted.setTextColor(ContextCompat.getColor(it.context, R.color.dark_blue))
+
                 val fragment: Fragment = ShipmentCurrentFragment()
                 val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
             }
 
             tvCompleted.setOnClickListener {
+
+                tvCurrent.backgroundTintList= it.context.getColorStateList(R.color.white)
+                tvCurrent.setTextColor(ContextCompat.getColor(it.context, R.color.dark_blue))
+
+                tvCompleted.backgroundTintList= it.context.getColorStateList(R.color.dark_blue)
+                tvCompleted.setTextColor(ContextCompat.getColor(it.context, R.color.white))
+
+
                 val fragment: Fragment = ShipmentCompletedFragment()
                 val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()

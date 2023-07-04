@@ -164,7 +164,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10ssp"
-            android:background="@drawable/shape_trip_status"
+            android:background="@drawable/shape_location"
             app:layout_constraintStart_toStartOf="@+id/tvShipment"
             app:layout_constraintTop_toBottomOf="@+id/tvDeliverTo" />
 
@@ -339,16 +339,19 @@
             app:layout_constraintStart_toEndOf="@+id/ivChat2"
             app:layout_constraintTop_toTopOf="@+id/ivChat2" />
 
-        <com.google.android.material.textview.MaterialTextView
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/tvLetsGo"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_50sdp"
             android:layout_marginTop="@dimen/_40sdp"
             android:layout_marginBottom="@dimen/_16sdp"
-            android:background="@drawable/shape_button_details"
             android:fontFamily="@font/poppins_medium"
-            android:gravity="center"
             android:text="Let’s Go"
+            android:stateListAnimator="@null"
+            android:includeFontPadding="false"
+            android:letterSpacing="0"
+            app:backgroundTint="@color/green"
+            app:cornerRadius="@dimen/_20sdp"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="@dimen/_12sdp"

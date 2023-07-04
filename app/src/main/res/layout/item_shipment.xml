@@ -67,7 +67,6 @@
             android:id="@+id/progressTruck"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_12sdp"
             android:max="100"
             android:progress="20"
             android:thumb="@drawable/truck25x"
@@ -76,16 +75,19 @@
             app:layout_constraintStart_toEndOf="@+id/ivTripStatus"
             app:layout_constraintTop_toTopOf="@+id/ivTripStatus" />
 
-        <com.google.android.material.textview.MaterialTextView
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/tvDetails"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="@dimen/_30sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_36sdp"
             android:layout_marginTop="@dimen/_15sdp"
-            android:background="@drawable/shape_button_details"
             android:fontFamily="@font/poppins_medium"
-            android:gravity="center"
-            android:text="Details"
+            android:includeFontPadding="false"
+            android:letterSpacing="0"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:text="@string/details"
+            app:backgroundTint="@color/green"
             android:textAllCaps="false"
+            app:cornerRadius="@dimen/_15sdp"
             android:textColor="@android:color/white"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintEnd_toEndOf="parent"
