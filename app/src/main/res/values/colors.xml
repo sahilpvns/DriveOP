@@ -7,8 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    //DriveOP app color
     <color name="dark_blue">#00006A</color>
     <color name="light_black">#838383</color>
+    <color name="light_black_2">#ABABAB</color>
     <color name="green">#41A950</color>
     <color name="light_second_black">#202020</color>
+    <color name="default_blue">#00006A</color>
+    <color name="shipment_card_view_bg">#4DCAD7F8</color>
+    <color name="yellow">#FFA800</color>
+    <color name="yellow_20">#33FFA800</color>
 </resources>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="@dimen/_16sdp"
+    tools:context=".login.fragment.DigitalCopiesFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvShipment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Shipment- #2732682"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:drawableStart="@drawable/shape_calender"
+        android:drawablePadding="@dimen/_8sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="31-05-2023 - 31-05-2023"
+        android:textColor="@color/light_black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvShipment" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:drawableStart="@drawable/shape_map"
+        android:drawablePadding="@dimen/_8sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Sikandarpur - Golf course road"
+        android:textColor="@color/light_black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDateTime" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Name"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_50sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Sahil Prajapati"
+        android:textColor="@color/light_black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvName" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvDeliverTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Deliver To"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <ImageView
+        android:id="@+id/icMapAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10ssp"
+        android:background="@drawable/shape_location"
+        app:layout_constraintStart_toStartOf="@+id/tvShipment"
+        app:layout_constraintTop_toBottomOf="@+id/tvDeliverTo" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvAddressDeliver"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:drawablePadding="@dimen/_8sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/deliver_address"
+        android:textColor="@color/light_black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/icMapAddress"
+        app:layout_constraintTop_toTopOf="@+id/icMapAddress" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTravelSheet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Travel sheets"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddressDeliver" />
+
+    <LinearLayout
+        android:id="@+id/llMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTravelSheet">
+
+        <ImageView
+            android:id="@+id/ivFirst"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:background="@mipmap/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/ivSecond"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@mipmap/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/ivThird"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@mipmap/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/ivForth"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@mipmap/ic_launcher" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCapturePOD"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:includeFontPadding="false"
+        android:letterSpacing="0"
+        android:stateListAnimator="@null"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:text="Capture POD"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_12sdp"
+        app:backgroundTint="@color/green"
+        app:cornerRadius="@dimen/_20sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llMain" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRecordException"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_50sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:includeFontPadding="false"
+        android:letterSpacing="0"
+        android:text="Record Exception"
+        android:stateListAnimator="@null"
+        android:textAllCaps="false"
+        android:textColor="@color/green"
+        android:textSize="@dimen/_12sdp"
+        app:backgroundTint="@android:color/white"
+        app:cornerRadius="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCapturePOD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnCapturePOD"
+        app:strokeColor="@color/green"
+        app:strokeWidth="@dimen/_1sdp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/BtnDownloadInvoice"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:includeFontPadding="false"
+        android:letterSpacing="0"
+        android:stateListAnimator="@null"
+        android:text="Download Invoice"
+        android:textAllCaps="false"
+        android:textColor="@color/green"
+        android:textSize="@dimen/_12sdp"
+        app:backgroundTint="@android:color/white"
+        app:cornerRadius="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@+id/btnCapturePOD"
+        app:strokeColor="@color/green"
+        app:strokeWidth="@dimen/_1sdp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

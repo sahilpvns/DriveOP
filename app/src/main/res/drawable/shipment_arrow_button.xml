@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+    <!-- Button pressed or focused state -->
+<!--    <item android:state_pressed="true" android:drawable="@drawable/arrow_up" />-->
+<!--    <item android:state_focused="true" android:drawable="@drawable/arrow_down" />-->
+<!--    &lt;!&ndash; Default state &ndash;&gt;-->
+<!--    <item android:drawable="@drawable/arrow_down" />-->
+
+
+    <item android:state_pressed="true"
+        android:drawable="@drawable/arrow_up" /> <!-- pressed -->
+    <item android:state_pressed="false"
+        android:drawable="@drawable/arrow_down" /> <!-- focused -->
+    <item android:drawable="@drawable/arrow_up" /> <!-- default -->
+
+
+<!--    <item android:drawable="@drawable/arrow_down" android:state_checked="true" /> &lt;!&ndash;pressed &ndash;&gt;-->
+<!--    <item android:drawable="@drawable/arrow_up"  /> &lt;!&ndash; Normal &ndash;&gt;-->
+
+</selector>

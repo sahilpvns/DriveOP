@@ -18,8 +18,7 @@ class EarnMoreFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentEarnMoreBinding.inflate(inflater, container, false)
 
         binding.btnNext.setOnClickListener {

@@ -1,6 +1,8 @@
 package com.supplyop.driveop.login.fragment
 
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +21,8 @@ import com.supplyop.driveop.ui.activity.DashboardActivity
 class LoginHomeFragment : Fragment() {
     private val binding get() = _binding!!
     private var _binding: FragmentLoginHomeBinding? = null
+
+    var sharedPreferences: SharedPreferences? = null
 
     private val viewModel by viewModels<LoginViewModel>()
 
@@ -72,10 +76,17 @@ class LoginHomeFragment : Fragment() {
         val email = binding.etEmail.text.toString()
         val pwd = binding.etPassword.text.toString()
         viewModel.loginUser(email = email, pwd = pwd)
+
+        sharedPreferences = activity?.getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE)
+        val editor = sharedPreferences?.edit()
+
+        editor?.putString(KEY_NAME, binding.etEmail.text.toString())
+        editor?.putString(KEY_NUMBER, binding.etPassword.text.toString())
+        editor?.apply()
     }
 
     private fun processError(msg: String?) {
-        Toast.makeText(context, "$msg Something went wrong", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "please fill valid username & password", Toast.LENGTH_SHORT).show()
         stopLoading()
     }
 
@@ -102,6 +113,12 @@ class LoginHomeFragment : Fragment() {
 
     private fun showLoading() {
         binding.prgbar.visibility = View.VISIBLE
+    }
+
+    companion object {
+        private const val SHARED_PREF_NAME = "MyPref"
+        private const val KEY_NAME = "name"
+        private const val KEY_NUMBER = "number"
     }
 
 

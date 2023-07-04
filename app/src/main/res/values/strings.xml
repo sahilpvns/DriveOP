@@ -34,4 +34,12 @@
     <string name="your_email_verified">Your Email is verified</string>
     <string name="email_verify_note">We have sent you access code vai SMS mobile number verification</string>
     <string name="reset">Reset</string>
+    <string name="current">Current</string>
+    <string name="completed">Completed</string>
+    <string name="shipments">Shipments</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="vehicle_inspection">Vehicle Inspection</string>
+    <string name="deliver_address">House- 238, 3rd floor, 10 Poorvimarg Near blinkit warehouse Golf course road, Gurugram, Haryana Pin- 283739</string>
+    <string name="comment_details">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+    <string name="details">Details</string>
 </resources>
