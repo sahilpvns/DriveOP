@@ -1,11 +1,12 @@
 package com.supplyop.driveop.ui.adapter
 
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.ItemShipmentBinding
 import com.supplyop.driveop.ui.activity.ShipmentDetailsActivity
 
@@ -21,24 +22,39 @@ class ShipmentAdapter() : RecyclerView.Adapter<ShipmentAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ShipmentAdapter.ViewHolder, position: Int) {
-        holder.itemBinding.tvShipment.setOnClickListener {
+        holder.itemBinding.apply {
 
-//            var flag = true
-//            if (flag) {
-//                holder.itemBinding.tvShipment.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.arrow_down, 0)
-//                flag = true
-//            } else {
-//                holder.itemBinding.tvShipment.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.arrow_up, 0)
-//               flag=  false
-//            }
+            tvShipment.setOnClickListener {
+                Toast.makeText(it.context, "Click", Toast.LENGTH_SHORT).show()
+            }
+
+            tvDetails.setOnClickListener {
+                val intent = Intent(it.context, ShipmentDetailsActivity::class.java)
+                it.context.startActivity(intent)
+
+            }
+
+
+
+            progressTruck.progress = 90
+            progressTruck.isEnabled = false
+
+            if (progressTruck.progress == 100) {
+                progressTruck.progressTintList = ColorStateList.valueOf(Color.GREEN)
+            } else if (progressTruck.progress <= 50) {
+                progressTruck.progressTintList = ColorStateList.valueOf(Color.YELLOW)
+            } else {
+                progressTruck.progressTintList = ColorStateList.valueOf(Color.YELLOW)
+            }
+
 
         }
 
-        holder.itemBinding.tvDetails.setOnClickListener {
-            val intent = Intent(it.context, ShipmentDetailsActivity::class.java)
-            it.context.startActivity(intent)
 
-        }
+//        android:drawableEnd="@{item.selected ? (ContextCompat.getDrawable(context,R.drawable.ic_arrow_up_blue)) :
+//        (ContextCompat.getDrawable(context,R.drawable.ic_arrow_down_2_blue))}"
+
+
     }
 
     override fun getItemCount() = 15

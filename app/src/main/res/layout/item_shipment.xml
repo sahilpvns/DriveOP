@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
             android:text="Shipment- #2732682"
-            android:drawableEnd="@drawable/shipment_arrow_button"
+            android:drawableEnd="@drawable/arrow_up"
             android:textColor="@android:color/black"
             android:textSize="@dimen/_14sdp"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,13 +63,12 @@
             app:layout_constraintStart_toStartOf="@+id/tvShipment"
             app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
 
-        <SeekBar
+        <androidx.appcompat.widget.AppCompatSeekBar
             android:id="@+id/progressTruck"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:max="100"
-            android:progress="20"
             android:thumb="@drawable/truck25x"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             app:layout_constraintBottom_toBottomOf="@+id/ivTripStatus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivTripStatus"
@@ -78,13 +77,14 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/tvDetails"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/_36sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_15sdp"
             android:fontFamily="@font/poppins_medium"
             android:includeFontPadding="false"
             android:letterSpacing="0"
-            android:paddingHorizontal="@dimen/_15sdp"
+            android:paddingHorizontal="@dimen/_18sdp"
             android:text="@string/details"
+            android:stateListAnimator="@null"
             app:backgroundTint="@color/green"
             android:textAllCaps="false"
             app:cornerRadius="@dimen/_15sdp"

@@ -134,28 +134,28 @@
             android:id="@+id/ivFirst"
             android:layout_width="@dimen/_60sdp"
             android:layout_height="@dimen/_60sdp"
-            android:background="@mipmap/ic_launcher" />
+            android:background="@drawable/image_download" />
 
         <ImageView
             android:id="@+id/ivSecond"
             android:layout_width="@dimen/_60sdp"
             android:layout_height="@dimen/_60sdp"
             android:layout_marginStart="@dimen/_8sdp"
-            android:background="@mipmap/ic_launcher" />
+            android:background="@drawable/image_download" />
 
         <ImageView
             android:id="@+id/ivThird"
             android:layout_width="@dimen/_60sdp"
             android:layout_height="@dimen/_60sdp"
             android:layout_marginStart="@dimen/_8sdp"
-            android:background="@mipmap/ic_launcher" />
+            android:background="@drawable/image_download" />
 
         <ImageView
             android:id="@+id/ivForth"
             android:layout_width="@dimen/_60sdp"
             android:layout_height="@dimen/_60sdp"
             android:layout_marginStart="@dimen/_8sdp"
-            android:background="@mipmap/ic_launcher" />
+            android:background="@drawable/image_download" />
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
