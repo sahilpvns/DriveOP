@@ -10,7 +10,9 @@ data class LoginResponse(
     @SerializedName("id")
     var id: String,
     @SerializedName("message")
-    var message: String
+    var message: String,
+
+    var expand : Boolean = false
 ) {
     data class Data(
         @SerializedName("Email")
