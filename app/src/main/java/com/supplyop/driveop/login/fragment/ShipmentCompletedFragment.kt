@@ -6,9 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.FragmentShipmentCompletedBinding
-import com.supplyop.driveop.databinding.FragmentShipmentCurrentBinding
 import com.supplyop.driveop.ui.adapter.ShipmentAdapter
 
 
@@ -26,10 +24,10 @@ class ShipmentCompletedFragment : Fragment() {
         savedInstanceState: Bundle?): View {
         _binding = FragmentShipmentCompletedBinding.inflate(inflater, container, false)
 
-        binding.apply {
-            rvItemShipment.layoutManager = LinearLayoutManager(context)
-            rvItemShipment.adapter = ShipmentAdapter()
-        }
+//        binding.apply {
+//            rvItemShipment.layoutManager = LinearLayoutManager(context)
+//            rvItemShipment.adapter = ShipmentAdapter(photosList)
+//        }
 
         return binding.root
     }

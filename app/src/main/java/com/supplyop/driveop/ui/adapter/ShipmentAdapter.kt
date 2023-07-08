@@ -3,19 +3,20 @@ package com.supplyop.driveop.ui.adapter
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.SeekBar
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.ItemShipmentBinding
 import com.supplyop.driveop.login.api.method.LoginResponse
 import com.supplyop.driveop.ui.activity.ShipmentDetailsActivity
+import com.supplyop.driveop.ui.modelclass.ShipmentResponse
 
 
-class ShipmentAdapter( ) : RecyclerView.Adapter<ShipmentAdapter.ViewHolder>() {
-    private lateinit var languageList: List<LoginResponse>
+class ShipmentAdapter(private val shipmentData: List<ShipmentResponse>) : RecyclerView.Adapter<ShipmentAdapter.ViewHolder>() {
+
     private lateinit var binding: ItemShipmentBinding
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShipmentAdapter.ViewHolder {
@@ -25,9 +26,14 @@ class ShipmentAdapter( ) : RecyclerView.Adapter<ShipmentAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ShipmentAdapter.ViewHolder, position: Int) {
+
+
+        val shipment = shipmentData[position]
         holder.itemBinding.apply {
 
-            tvShipment.setOnClickListener {}
+            tvShipment.text = shipment.shipmentId
+            tvDateTime.text = shipment.date
+            tvAddress.text = shipment.address
 
             tvDetails.setOnClickListener {
                 val intent = Intent(it.context, ShipmentDetailsActivity::class.java)
@@ -36,15 +42,12 @@ class ShipmentAdapter( ) : RecyclerView.Adapter<ShipmentAdapter.ViewHolder>() {
             }
 
 
-
-            progressTruck.progress = 90
+            progressTruck.progress = shipment.truckProgress
             progressTruck.isEnabled = false
 
             if (progressTruck.progress == 100) {
                 progressTruck.progressTintList = ColorStateList.valueOf(Color.GREEN)
-            } else if (progressTruck.progress <= 50) {
-                progressTruck.progressTintList = ColorStateList.valueOf(Color.YELLOW)
-            } else{
+            } else if (progressTruck.progress < 99) {
                 progressTruck.progressTintList = ColorStateList.valueOf(Color.YELLOW)
             }
 
@@ -52,25 +55,13 @@ class ShipmentAdapter( ) : RecyclerView.Adapter<ShipmentAdapter.ViewHolder>() {
         }
 
 
-//        android:drawableEnd="@{item.selected ? (ContextCompat.getDrawable(context,R.drawable.ic_arrow_up_blue)) :
-//        (ContextCompat.getDrawable(context,R.drawable.ic_arrow_down_2_blue))}"
-
-
     }
 
-    override fun getItemCount() = 15
-
-
-    inner class ViewHolder(var itemBinding: ItemShipmentBinding) :
-        RecyclerView.ViewHolder(itemBinding.root) {
-
-//        fun bind(item: String) {
-//            binding.apply {
-//                tvShipment.text = String.format("Shipment- #2732682 adfqf")
-//                tvAddress.text = String.format("31-05-2023 - 31-05-2023 asdfqwf")
-//            }
-//        }
+    override fun getItemCount(): Int {
+        return shipmentData.size
     }
+
+    inner class ViewHolder(var itemBinding: ItemShipmentBinding) : RecyclerView.ViewHolder(itemBinding.root)
 }
 
 
