@@ -45,10 +45,16 @@ class ShipmentAdapter(private val shipmentData: List<ShipmentResponse>) : Recycl
             progressTruck.progress = shipment.truckProgress
             progressTruck.isEnabled = false
 
-            if (progressTruck.progress == 100) {
-                progressTruck.progressTintList = ColorStateList.valueOf(Color.GREEN)
-            } else if (progressTruck.progress < 99) {
-                progressTruck.progressTintList = ColorStateList.valueOf(Color.YELLOW)
+            when (progressTruck.progress) {
+                100 -> {
+                    progressTruck.progressTintList = ColorStateList.valueOf(Color.GREEN)
+                }
+                in 10..30 -> {
+                    progressTruck.progressTintList = ColorStateList.valueOf(Color.RED)
+                }
+                else -> {
+                    progressTruck.progressTintList = ColorStateList.valueOf(Color.YELLOW)
+                }
             }
 
 

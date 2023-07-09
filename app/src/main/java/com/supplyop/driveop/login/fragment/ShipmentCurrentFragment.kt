@@ -1,5 +1,6 @@
 package com.supplyop.driveop.login.fragment
 
+import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -21,8 +22,8 @@ class ShipmentCurrentFragment : Fragment() {
     private val binding get() = _binding!!
     private var _binding: FragmentShipmentCurrentBinding? = null
 
-    private val photosList = ArrayList<ShipmentResponse>()
-    lateinit var photosAdapter: ShipmentAdapter
+    private val shipmentList = ArrayList<ShipmentResponse>()
+    lateinit var shipmentAdapter: ShipmentAdapter
     lateinit var progressDialog: ProgressDialog
 
 
@@ -33,23 +34,18 @@ class ShipmentCurrentFragment : Fragment() {
         _binding = FragmentShipmentCurrentBinding.inflate(inflater, container, false)
 
 
-        photosAdapter = ShipmentAdapter(photosList)
-        binding.rvItemShipment.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        binding.rvItemShipment.adapter = photosAdapter
+        shipmentAdapter = ShipmentAdapter(shipmentList)
+        binding.rvItemShipment.layoutManager = LinearLayoutManager(context)
+        binding.rvItemShipment.adapter = shipmentAdapter
         progressDialog = ProgressDialog.show(context, "Loading", "Fetching Data Please wait...", false)
 
-        getPhotosFromServer()
-
-//        binding.apply {
-//            rvItemShipment.layoutManager = LinearLayoutManager(context)
-//            rvItemShipment.adapter = ShipmentAdapter()
-//        }
+        getShipmentData()
 
 
         return binding.root
     }
 
-    private fun getPhotosFromServer() {
+    private fun getShipmentData() {
 
         val call: Call<List<ShipmentResponse>> = RetrofitInstance.getClient.getShipmentList()
         call.enqueue(object : Callback<List<ShipmentResponse>?> {
@@ -60,9 +56,9 @@ class ShipmentCurrentFragment : Fragment() {
 
             override fun onResponse(call: Call<List<ShipmentResponse>?>, response: Response<List<ShipmentResponse>?>) {
                 if (response.isSuccessful && response.body() != null) {
-                    val listOfPhotos = response.body()!!
-                    photosList.addAll(listOfPhotos)
-                    photosAdapter.notifyDataSetChanged()
+                    val listShipment = response.body()!!
+                    shipmentList.addAll(listShipment)
+                    shipmentAdapter.notifyDataSetChanged()
                 } else {
                     Toast.makeText(context, "Something went wrong${response.body()}", Toast.LENGTH_SHORT).show()
                 }
