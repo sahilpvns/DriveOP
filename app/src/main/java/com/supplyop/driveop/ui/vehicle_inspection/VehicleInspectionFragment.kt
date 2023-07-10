@@ -23,7 +23,7 @@ class VehicleInspectionFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val vehicleInspectionViewModel =
-            ViewModelProvider(this).get(VehicleInspectionViewModel::class.java)
+            ViewModelProvider(this)[VehicleInspectionViewModel::class.java]
 
         _binding = FragmentVehicleInspectionBinding.inflate(inflater, container, false)
         val root: View = binding.root
