@@ -2,21 +2,13 @@ package com.supplyop.driveop.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.ActivityDashboardBinding
 import com.supplyop.driveop.login.activity.OnboardingActivity
-import com.supplyop.driveop.login.fragment.EarnMoreFragment
-import com.supplyop.driveop.login.fragment.LoginHomeFragment
 import com.supplyop.driveop.ui.leaderboard.LeaderboardFragment
 import com.supplyop.driveop.ui.shipment.ShipmentFragment
 import com.supplyop.driveop.ui.vehicle_inspection.VehicleInspectionFragment
@@ -45,38 +37,43 @@ class DashboardActivity : AppCompatActivity() {
             navView.setOnNavigationItemSelectedListener {
                 when (it.itemId) {
                     R.id.leaderboard -> {
-
-                        val fragment: Fragment = LeaderboardFragment()
-                        val fragmentManager: FragmentManager = supportFragmentManager
-                        fragmentManager.beginTransaction().replace(R.id.navigationDashboard, fragment).commit()
-
+                        openLeaderboardFragment()
                         true
                     }
                     R.id.shipment -> {
-
-                        val fragment: Fragment = ShipmentFragment()
-                        val fragmentManager: FragmentManager = supportFragmentManager
-                        fragmentManager.beginTransaction().replace(R.id.navigationDashboard, fragment).commit()
-
+                        openShipmentFragment()
                         true
                     }
                     R.id.vehicleInspection -> {
-
-                        val fragment: Fragment = VehicleInspectionFragment()
-                        val fragmentManager: FragmentManager = supportFragmentManager
-                        fragmentManager.beginTransaction().replace(R.id.navigationDashboard, fragment).commit()
-
+                        openVehicleInspectionFragment()
                         true
                     }
+
                     else -> false
                 }
             }
 
         }
 
-
-
         headerToolbar()
+    }
+
+    private fun openVehicleInspectionFragment() {
+        val fragment: Fragment = VehicleInspectionFragment()
+        val fragmentManager: FragmentManager = supportFragmentManager
+        fragmentManager.beginTransaction().replace(R.id.navigationDashboard, fragment).commit()
+    }
+
+    private fun openShipmentFragment() {
+        val fragment: Fragment = ShipmentFragment()
+        val fragmentManager: FragmentManager = supportFragmentManager
+        fragmentManager.beginTransaction().replace(R.id.navigationDashboard, fragment).commit()
+    }
+
+    private fun openLeaderboardFragment() {
+        val fragment: Fragment = LeaderboardFragment()
+        val fragmentManager: FragmentManager = supportFragmentManager
+        fragmentManager.beginTransaction().replace(R.id.navigationDashboard, fragment).commit()
     }
 
     private fun headerToolbar() {
