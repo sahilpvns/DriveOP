@@ -51,4 +51,6 @@
     <string name="travel_sheets">Travel sheets</string>
     <string name="deliver_to">Deliver To</string>
     <string name="name">Name</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
 </resources>

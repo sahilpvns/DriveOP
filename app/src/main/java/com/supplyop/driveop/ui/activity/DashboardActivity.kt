@@ -1,14 +1,13 @@
 package com.supplyop.driveop.ui.activity
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.ActivityDashboardBinding
-import com.supplyop.driveop.login.activity.OnboardingActivity
 import com.supplyop.driveop.ui.leaderboard.LeaderboardFragment
 import com.supplyop.driveop.ui.shipment.ShipmentFragment
 import com.supplyop.driveop.ui.vehicle_inspection.VehicleInspectionFragment
@@ -32,7 +31,30 @@ class DashboardActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().replace(R.id.navigationDashboard, fragment).commitAllowingStateLoss()
         }
 
+
         binding.apply {
+            val toggle = ActionBarDrawerToggle(this@DashboardActivity, drawerLayout, R.string.drawer_open, R.string.drawer_close)
+
+
+            drawerLayout.addDrawerListener(toggle)
+            toggle.syncState()
+
+            navStart.setNavigationItemSelectedListener { menuItem ->
+                when (menuItem.itemId) {
+                    R.id.nav_item1 -> {
+                        Toast.makeText(this@DashboardActivity, "click", Toast.LENGTH_SHORT).show()
+                        true
+                    }
+
+                    R.id.nav_item2 -> {
+                        Toast.makeText(this@DashboardActivity, "click2", Toast.LENGTH_SHORT).show()
+                        true
+                    }
+
+                    else -> false
+                }
+            }
+
 
             navView.setOnNavigationItemSelectedListener {
                 when (it.itemId) {
@@ -40,10 +62,12 @@ class DashboardActivity : AppCompatActivity() {
                         openLeaderboardFragment()
                         true
                     }
+
                     R.id.shipment -> {
                         openShipmentFragment()
                         true
                     }
+
                     R.id.vehicleInspection -> {
                         openVehicleInspectionFragment()
                         true
@@ -86,9 +110,9 @@ class DashboardActivity : AppCompatActivity() {
                 Toast.makeText(this@DashboardActivity, "Search", Toast.LENGTH_SHORT).show()
             }
             dashboardMain.menuItem.setOnClickListener {
-                val intent = Intent(this@DashboardActivity,OnboardingActivity::class.java)
-                startActivity(intent)
-                finish()
+//                val intent = Intent(this@DashboardActivity, OnboardingActivity::class.java)
+//                startActivity(intent)
+//                finish()
             }
         }
     }

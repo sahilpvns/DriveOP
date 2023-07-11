@@ -20,8 +20,7 @@ class VehicleInspectionFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+        savedInstanceState: Bundle?): View {
         val vehicleInspectionViewModel =
             ViewModelProvider(this)[VehicleInspectionViewModel::class.java]
 
