@@ -3,16 +3,13 @@ package com.supplyop.driveop.ui.adapter
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SeekBar
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.ItemShipmentBinding
-import com.supplyop.driveop.login.api.method.LoginResponse
 import com.supplyop.driveop.ui.activity.ShipmentDetailsActivity
 import com.supplyop.driveop.ui.modelclass.ShipmentResponse
 
@@ -34,7 +31,12 @@ class ShipmentAdapter(private val shipmentData: List<ShipmentResponse>) : Recycl
         holder.itemBinding.apply {
 
             tvDetails.setOnClickListener {
+
                 val intent = Intent(it.context, ShipmentDetailsActivity::class.java)
+                intent.putExtra("shipmentId", shipment.shipmentId)
+                intent.putExtra("date", shipment.date)
+                intent.putExtra("address", shipment.address)
+                intent.putExtra("truckProgress", shipment.truckProgress)
                 it.context.startActivity(intent)
 
             }

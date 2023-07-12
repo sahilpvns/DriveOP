@@ -60,11 +60,12 @@
             app:layout_constraintStart_toStartOf="@+id/tvShipment"
             app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
 
-        <SeekBar
+        <androidx.appcompat.widget.AppCompatSeekBar
             android:id="@+id/progressTruck"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:thumb="@drawable/truck25x"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             app:layout_constraintBottom_toBottomOf="@+id/ivTripStatus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivTripStatus"

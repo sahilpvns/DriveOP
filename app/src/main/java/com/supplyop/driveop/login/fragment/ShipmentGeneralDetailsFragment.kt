@@ -10,7 +10,12 @@ import androidx.fragment.app.Fragment
 import com.supplyop.driveop.databinding.FragmentShipmentGeneralDetailsBinding
 
 
-class ShipmentGeneralDetailsFragment : Fragment() {
+class ShipmentGeneralDetailsFragment(
+    private var shipmentId: String?,
+    private var date: String?,
+    private var address: String?,
+    private var truckProgress: Int?
+) : Fragment() {
 
     private val binding get() = _binding!!
     private var _binding: FragmentShipmentGeneralDetailsBinding? = null
@@ -26,16 +31,25 @@ class ShipmentGeneralDetailsFragment : Fragment() {
         _binding = FragmentShipmentGeneralDetailsBinding.inflate(inflater, container, false)
 
         binding.apply {
-            progressTruck.progress = 90
+
+            tvShipment.text = shipmentId
+            tvDateTime.text = date
+            tvAddress.text = address
+            progressTruck.progress = truckProgress ?: 0
             progressTruck.isEnabled = false
 
-            if (progressTruck.progress == 100) {
-                progressTruck.progressTintList = ColorStateList.valueOf(Color.GREEN)
-            } else if (progressTruck.progress <= 50) {
-                progressTruck.progressTintList = ColorStateList.valueOf(Color.YELLOW)
-            } else {
-                progressTruck.progressTintList = ColorStateList.valueOf(Color.YELLOW)
+            when (progressTruck.progress) {
+                100 -> {
+                    progressTruck.progressTintList = ColorStateList.valueOf(Color.GREEN)
+                }
+                in 10..30 -> {
+                    progressTruck.progressTintList = ColorStateList.valueOf(Color.RED)
+                }
+                else -> {
+                    progressTruck.progressTintList = ColorStateList.valueOf(Color.YELLOW)
+                }
             }
+
         }
 
 

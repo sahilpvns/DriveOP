@@ -1,16 +1,13 @@
 package com.supplyop.driveop.ui.activity
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.ActivityShipmentDetailsBinding
-import com.supplyop.driveop.login.activity.OnboardingActivity
 import com.supplyop.driveop.login.fragment.CommentsFragment
 import com.supplyop.driveop.login.fragment.DigitalCopiesFragment
 import com.supplyop.driveop.login.fragment.ShipmentGeneralDetailsFragment
@@ -27,10 +24,16 @@ class ShipmentDetailsActivity : AppCompatActivity() {
         setContentView(view)
 
         supportActionBar?.hide()
-        headerToolbar()
+
+        val shipmentId = intent.getStringExtra("shipmentId")
+        val date = intent.getStringExtra("date")
+        val address = intent.getStringExtra("address")
+        val truckProgress = intent.getIntExtra("truckProgress",0)
+
+        headerToolbar(shipmentId)
 
         if (savedInstanceState == null) { // initial transaction should be wrapped like this
-            val fragment: Fragment = ShipmentGeneralDetailsFragment()
+            val fragment: Fragment = ShipmentGeneralDetailsFragment(shipmentId, date, address, truckProgress)
             supportFragmentManager.beginTransaction().replace(R.id.shipment_container, fragment).commitAllowingStateLoss()
         }
 
@@ -47,7 +50,12 @@ class ShipmentDetailsActivity : AppCompatActivity() {
                 tvDigitalCopies.setTextColor(ContextCompat.getColor(this@ShipmentDetailsActivity, R.color.dark_blue))
 
                 // open ShipmentDetailsFragment
-                val fragment: Fragment = ShipmentGeneralDetailsFragment()
+                val fragment: Fragment = ShipmentGeneralDetailsFragment(
+                    shipmentId,
+                    date,
+                    address,
+                    truckProgress
+                )
                 val fragmentManager: FragmentManager = supportFragmentManager
                 fragmentManager.beginTransaction().replace(R.id.shipment_container, fragment).commit()
             }
@@ -92,11 +100,14 @@ class ShipmentDetailsActivity : AppCompatActivity() {
 
     }
 
-    private fun headerToolbar() {
+    private fun headerToolbar(shipmentId: String?) {
         binding?.apply {
-            shipmentDetails.headerTitle.text = String.format("Shipment- #2732682")
+            shipmentDetails.apply {
+                headerTitle.text = shipmentId
+                menuItem.setBackgroundResource(R.drawable.arrow_back)
+                menuItem.setOnClickListener { finish() }
+            }
         }
-
 
     }
 
