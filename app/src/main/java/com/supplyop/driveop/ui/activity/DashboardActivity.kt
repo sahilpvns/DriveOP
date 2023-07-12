@@ -1,9 +1,11 @@
 package com.supplyop.driveop.ui.activity
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.supplyop.driveop.R
@@ -16,6 +18,7 @@ import com.supplyop.driveop.ui.vehicle_inspection.VehicleInspectionFragment
 class DashboardActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDashboardBinding
+    lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,31 +36,41 @@ class DashboardActivity : AppCompatActivity() {
 
 
         binding.apply {
-            val toggle = ActionBarDrawerToggle(this@DashboardActivity, drawerLayout, R.string.drawer_open, R.string.drawer_close)
 
-
-            drawerLayout.addDrawerListener(toggle)
-            toggle.syncState()
-
-            navStart.setNavigationItemSelectedListener { menuItem ->
-                when (menuItem.itemId) {
-                    R.id.nav_item1 -> {
-                        Toast.makeText(this@DashboardActivity, "click", Toast.LENGTH_SHORT).show()
-                        true
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            navStart.setNavigationItemSelectedListener {
+                when (it.itemId) {
+                    R.id.vehicleInspection -> {
+                        Toast.makeText(this@DashboardActivity, "vehicleInspection", Toast.LENGTH_SHORT).show()
                     }
 
-                    R.id.nav_item2 -> {
-                        Toast.makeText(this@DashboardActivity, "click2", Toast.LENGTH_SHORT).show()
-                        true
+                    R.id.myRoutes -> {
+                        Toast.makeText(this@DashboardActivity, "tvMyRoutes", Toast.LENGTH_SHORT).show()
                     }
 
-                    else -> false
+                    R.id.aboutCompany -> {
+                        Toast.makeText(this@DashboardActivity, "aboutCompany", Toast.LENGTH_SHORT).show()
+                    }
+
+                    R.id.contactUs -> {
+                        Toast.makeText(this@DashboardActivity, "contactUs", Toast.LENGTH_SHORT).show()
+                    }
+
+                    R.id.termsConditions -> {
+                        Toast.makeText(this@DashboardActivity, "termsConditions", Toast.LENGTH_SHORT).show()
+                    }
+
+                    R.id.privacyPolicy -> {
+                        Toast.makeText(this@DashboardActivity, "privacyPolicy", Toast.LENGTH_SHORT).show()
+                    }
+
                 }
+                true
             }
 
 
-            navView.setOnNavigationItemSelectedListener {
-                when (it.itemId) {
+            navView.setOnNavigationItemSelectedListener {menuItem ->
+                when (menuItem.itemId) {
                     R.id.leaderboard -> {
                         openLeaderboardFragment()
                         true
@@ -80,6 +93,13 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         headerToolbar()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (toggle.onOptionsItemSelected(item)) {
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun openVehicleInspectionFragment() {
@@ -110,9 +130,8 @@ class DashboardActivity : AppCompatActivity() {
                 Toast.makeText(this@DashboardActivity, "Search", Toast.LENGTH_SHORT).show()
             }
             dashboardMain.menuItem.setOnClickListener {
-//                val intent = Intent(this@DashboardActivity, OnboardingActivity::class.java)
-//                startActivity(intent)
-//                finish()
+                if (!drawerLayout.isDrawerOpen(GravityCompat.START)) drawerLayout.openDrawer(GravityCompat.START)
+                else drawerLayout.closeDrawer(GravityCompat.END)
             }
         }
     }

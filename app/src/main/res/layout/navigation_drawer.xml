@@ -2,16 +2,17 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/dark_blue">
+    android:layout_height="wrap_content">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivProfile"
         android:layout_width="@dimen/_50sdp"
         android:layout_height="@dimen/_50sdp"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_30sdp"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/app_icon"
+        android:layout_marginBottom="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,7 +24,7 @@
         android:fontFamily="@font/poppins_medium"
         android:text="Sahil Prajapati"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/_14sdp"
+        android:textSize="@dimen/_13sdp"
         app:layout_constraintStart_toEndOf="@+id/ivProfile"
         app:layout_constraintTop_toTopOf="@+id/ivProfile" />
 
@@ -35,173 +36,9 @@
         android:fontFamily="@font/poppins_medium"
         android:text="Varanasi"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/_14sdp"
+        android:textSize="@dimen/_12sdp"
         app:layout_constraintStart_toEndOf="@+id/ivProfile"
         app:layout_constraintTop_toBottomOf="@+id/userName" />
-
-    <ImageView
-        android:id="@+id/ivCross"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_20sdp"
-        android:src="@drawable/cross"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvVehicle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_30sdp"
-        android:drawableStart="@drawable/cross"
-        android:drawablePadding="@dimen/_5sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Vehicle Inspection"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/_13sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userAddress" />
-
-    <View
-        android:id="@+id/viewLine"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/_1sdp"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginEnd="@dimen/_40sdp"
-        android:background="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvVehicle"
-        app:layout_constraintTop_toBottomOf="@+id/tvVehicle" />
-
-    <TextView
-        android:id="@+id/tvMyRoutes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_20sdp"
-        android:drawableStart="@drawable/cross"
-        android:drawablePadding="@dimen/_5sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="My Routes"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/_13sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewLine" />
-
-    <View
-        android:id="@+id/viewLine1"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/_1sdp"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginEnd="@dimen/_40sdp"
-        android:background="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvMyRoutes"
-        app:layout_constraintTop_toBottomOf="@+id/tvMyRoutes" />
-
-    <TextView
-        android:id="@+id/tvAboutCompany"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_20sdp"
-        android:drawableStart="@drawable/cross"
-        android:drawablePadding="@dimen/_5sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="About Company"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/_13sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewLine1" />
-
-    <View
-        android:id="@+id/viewLine2"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/_1sdp"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginEnd="@dimen/_40sdp"
-        android:background="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvAboutCompany"
-        app:layout_constraintTop_toBottomOf="@+id/tvAboutCompany" />
-
-    <TextView
-        android:id="@+id/tvContactUs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_20sdp"
-        android:drawableStart="@drawable/cross"
-        android:drawablePadding="@dimen/_5sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Contact Us"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/_13sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewLine2" />
-
-    <View
-        android:id="@+id/viewLine3"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/_1sdp"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginEnd="@dimen/_40sdp"
-        android:background="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvContactUs"
-        app:layout_constraintTop_toBottomOf="@+id/tvContactUs" />
-
-    <TextView
-        android:id="@+id/tvTermsConditions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_20sdp"
-        android:drawableStart="@drawable/cross"
-        android:drawablePadding="@dimen/_5sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Terms &amp; Conditions"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/_13sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewLine3" />
-
-    <View
-        android:id="@+id/viewLine4"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/_1sdp"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginEnd="@dimen/_40sdp"
-        android:background="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvTermsConditions"
-        app:layout_constraintTop_toBottomOf="@+id/tvTermsConditions" />
-
-    <TextView
-        android:id="@+id/tvPrivacyPolicy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_20sdp"
-        android:drawableStart="@drawable/cross"
-        android:drawablePadding="@dimen/_5sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Privacy Policy"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/_13sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewLine4" />
-
-    <TextView
-        android:id="@+id/tvLogOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_50sdp"
-        android:drawableStart="@drawable/cross"
-        android:drawablePadding="@dimen/_5sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Log Out"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/_13sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPrivacyPolicy" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

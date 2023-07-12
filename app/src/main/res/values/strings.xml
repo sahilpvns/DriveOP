@@ -53,4 +53,11 @@
     <string name="name">Name</string>
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
+    <string name="my_routes">My Routes</string>
+    <string name="about_company">About Company</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
