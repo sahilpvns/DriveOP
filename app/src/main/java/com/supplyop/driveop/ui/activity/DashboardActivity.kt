@@ -68,26 +68,21 @@ class DashboardActivity : AppCompatActivity() {
                 true
             }
 
-
-            navView.setOnNavigationItemSelectedListener {menuItem ->
-                when (menuItem.itemId) {
+            navView.setOnNavigationItemSelectedListener {
+                when (it.itemId) {
                     R.id.leaderboard -> {
                         openLeaderboardFragment()
-                        true
                     }
 
                     R.id.shipment -> {
                         openShipmentFragment()
-                        true
                     }
 
                     R.id.vehicleInspection -> {
                         openVehicleInspectionFragment()
-                        true
                     }
-
-                    else -> false
                 }
+                true
             }
 
         }
@@ -122,16 +117,20 @@ class DashboardActivity : AppCompatActivity() {
 
     private fun headerToolbar() {
         binding.apply {
-            dashboardMain.headerTitle.text = String.format("Shipments")
-            dashboardMain.ivNotification.setOnClickListener {
-                Toast.makeText(this@DashboardActivity, "Notification", Toast.LENGTH_SHORT).show()
-            }
-            dashboardMain.ivSearch.setOnClickListener {
-                Toast.makeText(this@DashboardActivity, "Search", Toast.LENGTH_SHORT).show()
-            }
-            dashboardMain.menuItem.setOnClickListener {
-                if (!drawerLayout.isDrawerOpen(GravityCompat.START)) drawerLayout.openDrawer(GravityCompat.START)
-                else drawerLayout.closeDrawer(GravityCompat.END)
+            dashboardMain.apply {
+                headerTitle.text = String.format("Shipments")
+                ivNotification.setOnClickListener {
+                    Toast.makeText(this@DashboardActivity, "Notification", Toast.LENGTH_SHORT).show()
+                }
+                ivSearch.setOnClickListener {
+                    Toast.makeText(this@DashboardActivity, "Search", Toast.LENGTH_SHORT).show()
+                }
+                menuItem.setOnClickListener {
+                    if (!drawerLayout.isDrawerOpen(GravityCompat.START)) drawerLayout.openDrawer(GravityCompat.START)
+                    else {
+                        drawerLayout.closeDrawer(GravityCompat.END)
+                    }
+                }
             }
         }
     }
