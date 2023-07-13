@@ -10,9 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.ActivityDashboardBinding
-import com.supplyop.driveop.ui.leaderboard.LeaderboardFragment
-import com.supplyop.driveop.ui.shipment.ShipmentFragment
-import com.supplyop.driveop.ui.vehicle_inspection.VehicleInspectionFragment
+import com.supplyop.driveop.ui.fragment.LeaderboardFragment
+import com.supplyop.driveop.ui.fragment.ShipmentFragment
+import com.supplyop.driveop.ui.fragment.VehicleInspectionFragment
 
 
 class DashboardActivity : AppCompatActivity() {

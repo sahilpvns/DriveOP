@@ -1,4 +1,4 @@
-package com.supplyop.driveop.ui.vehicle_inspection
+package com.supplyop.driveop.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.supplyop.driveop.databinding.FragmentVehicleInspectionBinding
+import com.supplyop.driveop.ui.ViewModel.VehicleInspectionViewModel
 
 class VehicleInspectionFragment : Fragment() {
 

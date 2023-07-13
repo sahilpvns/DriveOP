@@ -1,4 +1,4 @@
-package com.supplyop.driveop.ui.vehicle_inspection
+package com.supplyop.driveop.ui.ViewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

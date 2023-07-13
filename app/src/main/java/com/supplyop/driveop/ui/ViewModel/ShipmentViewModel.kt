@@ -1,4 +1,4 @@
-package com.supplyop.driveop.ui.shipment
+package com.supplyop.driveop.ui.ViewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

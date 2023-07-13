@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
-import com.supplyop.driveop.Utils.withColor
+import com.supplyop.driveop.ui.utils.Utils.withColor
 import com.supplyop.driveop.databinding.FragmentShipmentCurrentBinding
 import com.supplyop.driveop.ui.adapter.ShipmentCurrentAdapter
 import com.supplyop.driveop.ui.modelclass.ShipmentResponse

@@ -1,4 +1,4 @@
-package com.supplyop.driveop
+package com.supplyop.driveop.ui.utils
 
 import androidx.annotation.ColorInt
 import com.google.android.material.snackbar.Snackbar
