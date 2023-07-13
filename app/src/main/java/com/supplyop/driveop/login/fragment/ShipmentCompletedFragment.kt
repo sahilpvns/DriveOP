@@ -13,7 +13,7 @@ import com.supplyop.driveop.databinding.FragmentShipmentCompletedBinding
 import com.supplyop.driveop.ui.adapter.ShipmentCurrentAdapter
 import com.supplyop.driveop.ui.modelclass.ShipmentResponse
 import com.supplyop.driveop.ui.network.RetrofitInstance
-import com.supplyop.driveop.util.withColor
+import com.supplyop.driveop.utils.withColor
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

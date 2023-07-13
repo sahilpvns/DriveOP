@@ -3,23 +3,21 @@ package com.supplyop.driveop.login.fragment
 import android.app.ProgressDialog
 import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.annotation.ColorInt
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
-import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.FragmentShipmentCurrentBinding
 import com.supplyop.driveop.ui.adapter.ShipmentCurrentAdapter
 import com.supplyop.driveop.ui.modelclass.ShipmentResponse
 import com.supplyop.driveop.ui.network.RetrofitInstance
-import com.supplyop.driveop.util.withColor
+import com.supplyop.driveop.utils.withColor
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class ShipmentCurrentFragment : Fragment() {
 
