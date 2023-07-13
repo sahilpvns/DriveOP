@@ -1,17 +1,22 @@
 package com.supplyop.driveop.login.fragment
 
 import android.app.ProgressDialog
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.ColorInt
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
+import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.FragmentShipmentCurrentBinding
 import com.supplyop.driveop.ui.adapter.ShipmentCurrentAdapter
 import com.supplyop.driveop.ui.modelclass.ShipmentResponse
 import com.supplyop.driveop.ui.network.RetrofitInstance
+import com.supplyop.driveop.util.withColor
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,7 +54,7 @@ class ShipmentCurrentFragment : Fragment() {
         val call: Call<List<ShipmentResponse>> = RetrofitInstance.getClient.getShipmentCurrentList()
         call.enqueue(object : Callback<List<ShipmentResponse>?> {
             override fun onFailure(call: Call<List<ShipmentResponse>?>, t: Throwable) {
-                Toast.makeText(context, "Something went wrong $t", Toast.LENGTH_SHORT).show()
+                Snackbar.make(binding.root, "Something went wrong $t", Snackbar.LENGTH_LONG).withColor(Color.RED).show()
                 progressDialog.dismiss()
             }
 
@@ -59,7 +64,7 @@ class ShipmentCurrentFragment : Fragment() {
                     shipmentList.addAll(listShipment)
                     shipmentCurrentAdapter.notifyDataSetChanged()
                 } else {
-                    Toast.makeText(context, "Something went wrong${response.body()}", Toast.LENGTH_SHORT).show()
+                    Snackbar.make(binding.root, "Something went wrong", Snackbar.LENGTH_LONG).withColor(Color.RED).show()
                 }
                 progressDialog.dismiss()
             }
