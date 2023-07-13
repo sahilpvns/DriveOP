@@ -6,6 +6,9 @@ import retrofit2.http.GET
 
 interface Api {
 
-    @GET("shipment")
-    fun getShipmentList(): Call<List<ShipmentResponse>>
+    @GET("shipmentCurrent")
+    fun getShipmentCurrentList(): Call<List<ShipmentResponse>>
+
+    @GET("shipmentCompleted")
+    fun getShipmentCompletedList(): Call<List<ShipmentResponse>>
 }

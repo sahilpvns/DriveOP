@@ -3,29 +3,26 @@ package com.supplyop.driveop.ui.adapter
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.supplyop.driveop.R
-import com.supplyop.driveop.databinding.ItemShipmentBinding
+import com.supplyop.driveop.databinding.ItemShipmentCompletedBinding
 import com.supplyop.driveop.ui.activity.ShipmentDetailsActivity
 import com.supplyop.driveop.ui.modelclass.ShipmentResponse
 
+class ShipmentCompletedAdapter(private val shipmentData: List<ShipmentResponse>) : RecyclerView.Adapter<ShipmentCompletedAdapter.ViewHolder>() {
 
-class ShipmentAdapter(private val shipmentData: List<ShipmentResponse>) : RecyclerView.Adapter<ShipmentAdapter.ViewHolder>() {
+    private lateinit var binding: ItemShipmentCompletedBinding
 
-    private lateinit var binding: ItemShipmentBinding
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShipmentAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShipmentCompletedAdapter.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        binding = ItemShipmentBinding.inflate(inflater, parent, false)
+        binding = ItemShipmentCompletedBinding.inflate(inflater, parent, false)
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ShipmentAdapter.ViewHolder, position: Int) {
-
+    override fun onBindViewHolder(holder: ShipmentCompletedAdapter.ViewHolder, position: Int) {
 
         val shipment = shipmentData[position]
         holder.itemBinding.apply {
@@ -64,15 +61,15 @@ class ShipmentAdapter(private val shipmentData: List<ShipmentResponse>) : Recycl
                 100 -> {
                     progressTruck.progressTintList = ColorStateList.valueOf(Color.GREEN)
                 }
+
                 in 10..30 -> {
                     progressTruck.progressTintList = ColorStateList.valueOf(Color.RED)
                 }
+
                 else -> {
                     progressTruck.progressTintList = ColorStateList.valueOf(Color.YELLOW)
                 }
             }
-
-
 
 
         }
@@ -84,7 +81,7 @@ class ShipmentAdapter(private val shipmentData: List<ShipmentResponse>) : Recycl
         return shipmentData.size
     }
 
-    inner class ViewHolder(var itemBinding: ItemShipmentBinding) : RecyclerView.ViewHolder(itemBinding.root)
+    inner class ViewHolder(var itemBinding: ItemShipmentCompletedBinding) : RecyclerView.ViewHolder(itemBinding.root)
 }
 
 

@@ -1,6 +1,5 @@
 package com.supplyop.driveop.login.fragment
 
-import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.supplyop.driveop.databinding.FragmentShipmentCurrentBinding
-import com.supplyop.driveop.ui.adapter.ShipmentAdapter
+import com.supplyop.driveop.ui.adapter.ShipmentCurrentAdapter
 import com.supplyop.driveop.ui.modelclass.ShipmentResponse
 import com.supplyop.driveop.ui.network.RetrofitInstance
 import retrofit2.Call
@@ -23,7 +22,7 @@ class ShipmentCurrentFragment : Fragment() {
     private var _binding: FragmentShipmentCurrentBinding? = null
 
     private val shipmentList = ArrayList<ShipmentResponse>()
-    lateinit var shipmentAdapter: ShipmentAdapter
+    lateinit var shipmentCurrentAdapter: ShipmentCurrentAdapter
     lateinit var progressDialog: ProgressDialog
 
 
@@ -34,9 +33,9 @@ class ShipmentCurrentFragment : Fragment() {
         _binding = FragmentShipmentCurrentBinding.inflate(inflater, container, false)
 
 
-        shipmentAdapter = ShipmentAdapter(shipmentList)
+        shipmentCurrentAdapter = ShipmentCurrentAdapter(shipmentList)
         binding.rvItemShipment.layoutManager = LinearLayoutManager(context)
-        binding.rvItemShipment.adapter = shipmentAdapter
+        binding.rvItemShipment.adapter = shipmentCurrentAdapter
         progressDialog = ProgressDialog.show(context, "Loading", "Fetching Data Please wait...", false)
 
         getShipmentData()
@@ -47,7 +46,7 @@ class ShipmentCurrentFragment : Fragment() {
 
     private fun getShipmentData() {
 
-        val call: Call<List<ShipmentResponse>> = RetrofitInstance.getClient.getShipmentList()
+        val call: Call<List<ShipmentResponse>> = RetrofitInstance.getClient.getShipmentCurrentList()
         call.enqueue(object : Callback<List<ShipmentResponse>?> {
             override fun onFailure(call: Call<List<ShipmentResponse>?>, t: Throwable) {
                 Toast.makeText(context, "Something went wrong $t", Toast.LENGTH_SHORT).show()
@@ -58,7 +57,7 @@ class ShipmentCurrentFragment : Fragment() {
                 if (response.isSuccessful && response.body() != null) {
                     val listShipment = response.body()!!
                     shipmentList.addAll(listShipment)
-                    shipmentAdapter.notifyDataSetChanged()
+                    shipmentCurrentAdapter.notifyDataSetChanged()
                 } else {
                     Toast.makeText(context, "Something went wrong${response.body()}", Toast.LENGTH_SHORT).show()
                 }

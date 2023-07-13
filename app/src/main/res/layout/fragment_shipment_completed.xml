@@ -6,10 +6,10 @@
     tools:context=".login.fragment.ShipmentCompletedFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvItemShipment"
+        android:id="@+id/rvItemShipmentCompleted"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:itemCount="8"
-        tools:listitem="@layout/item_shipment" />
+        tools:listitem="@layout/item_shipment_completed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

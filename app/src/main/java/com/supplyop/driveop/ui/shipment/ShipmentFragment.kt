@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.content.res.AppCompatResources.getColorStateList
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -16,7 +14,6 @@ import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.FragmentShipmentBinding
 import com.supplyop.driveop.login.fragment.ShipmentCompletedFragment
 import com.supplyop.driveop.login.fragment.ShipmentCurrentFragment
-import com.supplyop.driveop.ui.adapter.ShipmentAdapter
 
 class ShipmentFragment : Fragment() {
 
