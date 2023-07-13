@@ -1,4 +1,4 @@
-package com.supplyop.driveop.ui.ViewModel
+package com.supplyop.driveop.login.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

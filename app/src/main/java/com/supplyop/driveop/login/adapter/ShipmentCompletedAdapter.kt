@@ -1,4 +1,4 @@
-package com.supplyop.driveop.ui.adapter
+package com.supplyop.driveop.login.adapter
 
 import android.content.Intent
 import android.content.res.ColorStateList
@@ -9,20 +9,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.ItemShipmentCompletedBinding
-import com.supplyop.driveop.ui.activity.ShipmentDetailsActivity
-import com.supplyop.driveop.ui.modelclass.ShipmentResponse
+import com.supplyop.driveop.login.activity.ShipmentDetailsActivity
+import com.supplyop.driveop.login.network.ShipmentResponse
 
 class ShipmentCompletedAdapter(private val shipmentData: List<ShipmentResponse>) : RecyclerView.Adapter<ShipmentCompletedAdapter.ViewHolder>() {
 
     private lateinit var binding: ItemShipmentCompletedBinding
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShipmentCompletedAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         binding = ItemShipmentCompletedBinding.inflate(inflater, parent, false)
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ShipmentCompletedAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val shipment = shipmentData[position]
         holder.itemBinding.apply {

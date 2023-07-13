@@ -1,4 +1,4 @@
-package com.supplyop.driveop.login.api.method
+package com.supplyop.driveop.login.network
 
 import com.google.gson.annotations.SerializedName
 

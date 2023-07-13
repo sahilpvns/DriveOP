@@ -1,7 +1,6 @@
-package com.supplyop.driveop.ui.modelclass
+package com.supplyop.driveop.login.network
 
 import com.google.gson.annotations.SerializedName
-import java.nio.channels.Selector
 
 class ShipmentResponse(
 

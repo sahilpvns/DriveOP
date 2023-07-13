@@ -1,4 +1,4 @@
-package com.supplyop.driveop.login.api.method
+package com.supplyop.driveop.login.network
 
 import retrofit2.Response
 import retrofit2.http.Body

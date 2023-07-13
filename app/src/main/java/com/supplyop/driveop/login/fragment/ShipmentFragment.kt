@@ -1,4 +1,4 @@
-package com.supplyop.driveop.ui.fragment
+package com.supplyop.driveop.login.fragment
 
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -12,9 +12,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.FragmentShipmentBinding
-import com.supplyop.driveop.login.fragment.ShipmentCompletedFragment
-import com.supplyop.driveop.login.fragment.ShipmentCurrentFragment
-import com.supplyop.driveop.ui.ViewModel.ShipmentViewModel
+import com.supplyop.driveop.login.viewmodel.ShipmentViewModel
 
 class ShipmentFragment : Fragment() {
 

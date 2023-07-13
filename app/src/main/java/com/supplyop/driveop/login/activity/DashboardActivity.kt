@@ -1,4 +1,4 @@
-package com.supplyop.driveop.ui.activity
+package com.supplyop.driveop.login.activity
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -10,9 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.ActivityDashboardBinding
-import com.supplyop.driveop.ui.fragment.LeaderboardFragment
-import com.supplyop.driveop.ui.fragment.ShipmentFragment
-import com.supplyop.driveop.ui.fragment.VehicleInspectionFragment
+import com.supplyop.driveop.login.fragment.LeaderboardFragment
+import com.supplyop.driveop.login.fragment.ShipmentFragment
+import com.supplyop.driveop.login.fragment.VehicleInspectionFragment
 
 
 class DashboardActivity : AppCompatActivity() {

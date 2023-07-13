@@ -13,10 +13,10 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.FragmentLoginHomeBinding
-import com.supplyop.driveop.login.api.method.BaseResponse
-import com.supplyop.driveop.login.api.method.LoginResponse
+import com.supplyop.driveop.login.network.BaseResponse
+import com.supplyop.driveop.login.network.LoginResponse
 import com.supplyop.driveop.login.viewmodel.LoginViewModel
-import com.supplyop.driveop.ui.activity.DashboardActivity
+import com.supplyop.driveop.login.activity.DashboardActivity
 
 class LoginHomeFragment : Fragment() {
     private val binding get() = _binding!!

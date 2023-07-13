@@ -1,13 +1,13 @@
-package com.supplyop.driveop.ui.ViewModel
+package com.supplyop.driveop.login.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class LeaderboardViewModel : ViewModel() {
+class VehicleInspectionViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is Leaderboard Screen"
+        value = "This is Vehicle Inspection Screen"
     }
     val text: LiveData<String> = _text
 }

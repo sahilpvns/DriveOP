@@ -1,4 +1,4 @@
-package com.supplyop.driveop.ui.fragment
+package com.supplyop.driveop.login.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.supplyop.driveop.databinding.FragmentLeaderboardBinding
-import com.supplyop.driveop.ui.ViewModel.LeaderboardViewModel
+import com.supplyop.driveop.login.viewmodel.LeaderboardViewModel
 
 class LeaderboardFragment : Fragment() {
 

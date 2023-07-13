@@ -1,4 +1,4 @@
-package com.supplyop.driveop.login.api.method
+package com.supplyop.driveop.login.network
 
 import com.supplyop.driveop.login.utils.Constant
 import okhttp3.OkHttpClient

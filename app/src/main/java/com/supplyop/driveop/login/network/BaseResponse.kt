@@ -1,4 +1,4 @@
-package com.supplyop.driveop.login.api.method
+package com.supplyop.driveop.login.network
 
 sealed class BaseResponse<out T> {
     data class Success<out T>(val data: T? = null) : BaseResponse<T>()

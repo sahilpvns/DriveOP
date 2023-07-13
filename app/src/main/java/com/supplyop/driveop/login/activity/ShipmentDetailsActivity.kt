@@ -1,4 +1,4 @@
-package com.supplyop.driveop.ui.activity
+package com.supplyop.driveop.login.activity
 
 import android.os.Bundle
 import android.view.View

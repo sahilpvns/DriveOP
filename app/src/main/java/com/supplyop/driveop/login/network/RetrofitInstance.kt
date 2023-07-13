@@ -1,4 +1,4 @@
-package com.supplyop.driveop.ui.network
+package com.supplyop.driveop.login.network
 
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient

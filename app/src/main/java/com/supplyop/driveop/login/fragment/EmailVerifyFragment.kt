@@ -5,12 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.supplyop.driveop.R
-import com.supplyop.driveop.databinding.FragmentEarnMoreBinding
 import com.supplyop.driveop.databinding.FragmentEmailVerifyBinding
-import com.supplyop.driveop.ui.activity.DashboardActivity
+import com.supplyop.driveop.login.activity.DashboardActivity
 
 
 class EmailVerifyFragment : Fragment() {
