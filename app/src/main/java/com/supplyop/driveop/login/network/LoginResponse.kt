@@ -12,7 +12,6 @@ data class LoginResponse(
     @SerializedName("message")
     var message: String,
 
-    var expand : Boolean = false
 ) {
     data class Data(
         @SerializedName("Email")

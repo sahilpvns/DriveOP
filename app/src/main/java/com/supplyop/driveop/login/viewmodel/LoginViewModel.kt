@@ -21,9 +21,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             try {
 
-                val loginRequest = LoginRequest(
-                    password = pwd, email = email
-                )
+                val loginRequest = LoginRequest(password = pwd, email = email)
                 val response = userRepo.loginUser(loginRequest = loginRequest)
                 if (response?.code() == 200) {
                     loginResult.value = BaseResponse.Success(response.body())
