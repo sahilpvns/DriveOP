@@ -1,8 +1,8 @@
 package com.supplyop.driveop.login.repository
 
-import com.supplyop.driveop.login.api.method.LoginRequest
-import com.supplyop.driveop.login.api.method.LoginResponse
-import com.supplyop.driveop.login.api.method.UserApi
+import com.supplyop.driveop.login.network.LoginRequest
+import com.supplyop.driveop.login.network.LoginResponse
+import com.supplyop.driveop.login.network.UserApi
 import retrofit2.Response
 
 class UserRepository {

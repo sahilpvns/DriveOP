@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.activity.ShipmentDetailsActivity">
+    tools:context=".login.activity.ShipmentDetailsActivity">
 
     <include
         android:id="@+id/shipmentDetails"
@@ -41,7 +41,7 @@
                 app:cornerRadius="@dimen/_16sdp"
                 app:strokeColor="@color/dark_blue"
                 android:paddingHorizontal="@dimen/_15sdp"
-                android:text="General Details"
+                android:text="@string/general_details"
                 app:strokeWidth="@dimen/_1sdp"
                 android:textSize="@dimen/_12sdp" />
 
@@ -59,7 +59,7 @@
                 app:cornerRadius="@dimen/_16sdp"
                 app:strokeColor="@color/dark_blue"
                 android:paddingHorizontal="@dimen/_15sdp"
-                android:text="Comments"
+                android:text="@string/comments"
                 app:strokeWidth="@dimen/_1sdp"
                 android:textSize="@dimen/_12sdp" />
 
@@ -77,7 +77,7 @@
                 app:cornerRadius="@dimen/_16sdp"
                 app:strokeColor="@color/dark_blue"
                 android:paddingHorizontal="@dimen/_15sdp"
-                android:text="Digital Copies"
+                android:text="@string/digital_copies"
                 app:strokeWidth="@dimen/_1sdp"
                 android:textSize="@dimen/_12sdp" />
         </LinearLayout>

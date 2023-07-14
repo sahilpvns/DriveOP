@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/vehicleInspection"
+            android:icon="@drawable/vehicle_inspection"
+            android:title="@string/vehicle_inspection" />
+        <item
+            android:id="@+id/myRoutes"
+            android:icon="@drawable/vehicle_inspection"
+            android:title="@string/my_routes" />
+        <item
+            android:id="@+id/aboutCompany"
+            android:icon="@drawable/about_company"
+            android:title="@string/about_company" />
+        <item
+            android:id="@+id/contactUs"
+            android:icon="@drawable/contact_us"
+            android:title="@string/contact_us" />
+        <item
+            android:id="@+id/termsConditions"
+            android:icon="@drawable/term_condition"
+            android:title="@string/terms_conditions" />
+        <item
+            android:id="@+id/privacyPolicy"
+            android:icon="@drawable/privacy_policy"
+            android:title="@string/privacy_policy" />
+        <item
+            android:id="@+id/logOut"
+            android:icon="@drawable/log_out"
+            android:title="@string/log_out" />
+
+</menu>

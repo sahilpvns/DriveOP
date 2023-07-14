@@ -60,14 +60,12 @@
             app:layout_constraintStart_toStartOf="@+id/tvShipment"
             app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
 
-        <SeekBar
+        <androidx.appcompat.widget.AppCompatSeekBar
             android:id="@+id/progressTruck"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_12sdp"
-            android:max="100"
-            android:progress="20"
             android:thumb="@drawable/truck25x"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             app:layout_constraintBottom_toBottomOf="@+id/ivTripStatus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivTripStatus"
@@ -320,7 +318,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvPriority" />
 
         <ImageView
-            android:id="@+id/ivChat2"
+            android:id="@+id/ivDirection2"
             android:layout_width="@dimen/_45sdp"
             android:layout_height="@dimen/_45sdp"
             android:layout_marginStart="@dimen/_20sdp"
@@ -335,18 +333,18 @@
             android:layout_height="@dimen/_45sdp"
             android:layout_marginStart="@dimen/_20sdp"
             android:background="@drawable/call"
-            app:layout_constraintBottom_toBottomOf="@+id/ivChat2"
-            app:layout_constraintStart_toEndOf="@+id/ivChat2"
-            app:layout_constraintTop_toTopOf="@+id/ivChat2" />
+            app:layout_constraintBottom_toBottomOf="@+id/ivDirection2"
+            app:layout_constraintStart_toEndOf="@+id/ivDirection2"
+            app:layout_constraintTop_toTopOf="@+id/ivDirection2" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/tvLetsGo"
+            android:id="@+id/btnLetsGo"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
             android:layout_marginTop="@dimen/_40sdp"
             android:layout_marginBottom="@dimen/_16sdp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Let’s Go"
+            android:text="@string/let_go"
             android:stateListAnimator="@null"
             android:includeFontPadding="false"
             android:letterSpacing="0"
@@ -358,7 +356,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivChat2" />
+            app:layout_constraintTop_toBottomOf="@+id/ivDirection2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

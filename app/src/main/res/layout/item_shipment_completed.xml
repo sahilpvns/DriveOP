@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="@dimen/_10sdp"
     android:layout_margin="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_10sdp"
     app:cardElevation="@dimen/_3sdp"
     app:layout_constraintTop_toTopOf="parent">
 
@@ -18,41 +19,41 @@
             android:id="@+id/tvShipment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_medium"
-            android:text="Shipment- #2732682"
             android:drawableEnd="@drawable/arrow_down"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@android:color/black"
             android:textSize="@dimen/_14sdp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Shipment- #2732682" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvDateTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_regular"
             android:layout_marginTop="@dimen/_5sdp"
-            android:text="31-05-2023 - 31-05-2023"
             android:drawableStart="@drawable/shape_calender"
             android:drawablePadding="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_regular"
             android:textColor="@color/light_black"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvShipment" />
+            app:layout_constraintTop_toBottomOf="@+id/tvShipment"
+            tools:text="31-05-2023 - 31-05-2023" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_regular"
             android:layout_marginTop="@dimen/_5sdp"
-            android:text="Sikandarpur - Golf course road"
-            android:textColor="@color/light_black"
-            android:textSize="@dimen/_12sdp"
             android:drawableStart="@drawable/shape_map"
             android:drawablePadding="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/_12sdp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDateTime" />
+            app:layout_constraintTop_toBottomOf="@+id/tvDateTime"
+            tools:text="Sikandarpur - Golf course road" />
 
         <ImageView
             android:id="@+id/ivTripStatus"
@@ -65,10 +66,10 @@
 
         <androidx.appcompat.widget.AppCompatSeekBar
             android:id="@+id/progressTruck"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:thumb="@drawable/truck25x"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             app:layout_constraintBottom_toBottomOf="@+id/ivTripStatus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivTripStatus"
@@ -83,13 +84,13 @@
             android:includeFontPadding="false"
             android:letterSpacing="0"
             android:paddingHorizontal="@dimen/_18sdp"
-            android:text="@string/details"
             android:stateListAnimator="@null"
-            app:backgroundTint="@color/green"
+            android:text="@string/details"
             android:textAllCaps="false"
-            app:cornerRadius="@dimen/_15sdp"
             android:textColor="@android:color/white"
             android:textSize="@dimen/_12sdp"
+            app:backgroundTint="@color/green"
+            app:cornerRadius="@dimen/_15sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivTripStatus" />
 

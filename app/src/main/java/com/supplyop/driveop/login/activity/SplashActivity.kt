@@ -7,7 +7,6 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.supplyop.driveop.R
-import com.supplyop.driveop.ui.activity.DashboardActivity
 
 class SplashActivity : AppCompatActivity() {
 

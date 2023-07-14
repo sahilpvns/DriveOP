@@ -42,4 +42,24 @@
     <string name="deliver_address">House- 238, 3rd floor, 10 Poorvimarg Near blinkit warehouse Golf course road, Gurugram, Haryana Pin- 283739</string>
     <string name="comment_details">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
     <string name="details">Details</string>
+    <string name="general_details">General Details</string>
+    <string name="comments">Comments</string>
+    <string name="digital_copies">Digital Copies</string>
+    <string name="capture_pod">Capture POD</string>
+    <string name="record_exception">Record Exception</string>
+    <string name="download_invoice">Download Invoice</string>
+    <string name="travel_sheets">Travel sheets</string>
+    <string name="deliver_to">Deliver To</string>
+    <string name="name">Name</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+    <string name="my_routes">My Routes</string>
+    <string name="about_company">About Company</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="log_out">Log Out</string>
+    <string name="let_go">Let’s Go</string>
 </resources>

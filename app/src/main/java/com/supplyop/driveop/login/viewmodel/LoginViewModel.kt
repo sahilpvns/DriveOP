@@ -4,9 +4,9 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.supplyop.driveop.login.api.method.BaseResponse
-import com.supplyop.driveop.login.api.method.LoginRequest
-import com.supplyop.driveop.login.api.method.LoginResponse
+import com.supplyop.driveop.login.network.BaseResponse
+import com.supplyop.driveop.login.network.LoginRequest
+import com.supplyop.driveop.login.network.LoginResponse
 import com.supplyop.driveop.login.repository.UserRepository
 import kotlinx.coroutines.launch
 
@@ -21,9 +21,8 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             try {
 
-                val loginRequest = LoginRequest(
-                    password = pwd, username = username
-                )
+                val loginRequest = LoginRequest(password = pwd, username = username)
+                
                 val response = userRepo.loginUser(loginRequest = loginRequest)
                 if (response?.code() == 200) {
                     loginResult.value = BaseResponse.Success(response.body())

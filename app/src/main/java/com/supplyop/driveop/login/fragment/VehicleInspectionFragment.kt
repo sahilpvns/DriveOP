@@ -1,4 +1,4 @@
-package com.supplyop.driveop.ui.vehicle_inspection
+package com.supplyop.driveop.login.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.supplyop.driveop.databinding.FragmentVehicleInspectionBinding
+import com.supplyop.driveop.login.viewmodel.VehicleInspectionViewModel
 
 class VehicleInspectionFragment : Fragment() {
 
@@ -20,10 +21,9 @@ class VehicleInspectionFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+        savedInstanceState: Bundle?): View {
         val vehicleInspectionViewModel =
-            ViewModelProvider(this).get(VehicleInspectionViewModel::class.java)
+            ViewModelProvider(this)[VehicleInspectionViewModel::class.java]
 
         _binding = FragmentVehicleInspectionBinding.inflate(inflater, container, false)
         val root: View = binding.root

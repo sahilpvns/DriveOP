@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.shipment.ShipmentFragment">
+    tools:context=".login.fragment.ShipmentFragment">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/tvCurrent"
@@ -18,6 +18,7 @@
         android:letterSpacing="0"
         android:paddingHorizontal="@dimen/_15sdp"
         android:text="@string/current"
+        android:stateListAnimator="@null"
         android:textAllCaps="false"
         android:textColor="@color/white"
         app:cornerRadius="@dimen/_16sdp"
@@ -38,6 +39,7 @@
         android:paddingHorizontal="@dimen/_15sdp"
         android:textAllCaps="false"
         android:text="@string/completed"
+        android:stateListAnimator="@null"
         android:textColor="@color/dark_blue"
         app:backgroundTint="@android:color/white"
         app:cornerRadius="@dimen/_16sdp"
