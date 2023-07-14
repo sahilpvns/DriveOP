@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.supplyop.driveop.databinding.FragmentShipmentGeneralDetailsBinding
 
@@ -42,13 +43,35 @@ class ShipmentGeneralDetailsFragment(
                 100 -> {
                     progressTruck.progressTintList = ColorStateList.valueOf(Color.GREEN)
                 }
+
                 in 10..30 -> {
                     progressTruck.progressTintList = ColorStateList.valueOf(Color.RED)
                 }
+
                 else -> {
                     progressTruck.progressTintList = ColorStateList.valueOf(Color.YELLOW)
                 }
             }
+
+            ivDirection.setOnClickListener {
+                Toast.makeText(context, "Direction", Toast.LENGTH_SHORT).show()
+            }
+            ivChat.setOnClickListener {
+                Toast.makeText(context, "Chat", Toast.LENGTH_SHORT).show()
+            }
+            ivCall.setOnClickListener {
+                Toast.makeText(context, "Call", Toast.LENGTH_SHORT).show()
+            }
+            ivDirection2.setOnClickListener {
+                Toast.makeText(context, "Direction", Toast.LENGTH_SHORT).show()
+            }
+            ivCall2.setOnClickListener {
+                Toast.makeText(context, "Call", Toast.LENGTH_SHORT).show()
+            }
+            btnLetsGo.setOnClickListener {
+                Toast.makeText(context, "Let's Go", Toast.LENGTH_SHORT).show()
+            }
+
 
         }
 

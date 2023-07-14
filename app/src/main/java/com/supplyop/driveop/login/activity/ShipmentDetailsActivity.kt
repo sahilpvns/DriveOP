@@ -104,6 +104,8 @@ class ShipmentDetailsActivity : AppCompatActivity() {
         binding?.apply {
             shipmentDetails.apply {
                 headerTitle.text = shipmentId
+                ivNotification.visibility = View.GONE
+                ivSearch.visibility = View.GONE
                 menuItem.setBackgroundResource(R.drawable.arrow_back)
                 menuItem.setOnClickListener { finish() }
             }
