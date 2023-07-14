@@ -3,6 +3,7 @@ package com.supplyop.driveop.login.fragment
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,12 +12,14 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
+import com.google.android.material.snackbar.Snackbar
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.FragmentLoginHomeBinding
 import com.supplyop.driveop.login.network.BaseResponse
 import com.supplyop.driveop.login.network.LoginResponse
 import com.supplyop.driveop.login.viewmodel.LoginViewModel
 import com.supplyop.driveop.login.activity.DashboardActivity
+import com.supplyop.driveop.login.utils.Utils.withColor
 
 class LoginHomeFragment : Fragment() {
     private val binding get() = _binding!!
@@ -97,7 +100,7 @@ class LoginHomeFragment : Fragment() {
         if (data?.message.equals("Success")) {
             navigateToHome()
         } else {
-            Toast.makeText(context, data?.message, Toast.LENGTH_SHORT).show()
+            Snackbar.make(binding.root, data?.message.toString(), Snackbar.LENGTH_LONG).withColor(Color.RED).show()
         }
     }
 
