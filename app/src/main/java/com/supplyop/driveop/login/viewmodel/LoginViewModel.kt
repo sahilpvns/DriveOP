@@ -15,13 +15,14 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     val userRepo = UserRepository()
     val loginResult: MutableLiveData<BaseResponse<LoginResponse>> = MutableLiveData()
 
-    fun loginUser(email: String, pwd: String) {
+    fun loginUser(username: String, pwd: String) {
 
         loginResult.value = BaseResponse.Loading()
         viewModelScope.launch {
             try {
 
-                val loginRequest = LoginRequest(password = pwd, email = email)
+                val loginRequest = LoginRequest(password = pwd, username = username)
+                
                 val response = userRepo.loginUser(loginRequest = loginRequest)
                 if (response?.code() == 200) {
                     loginResult.value = BaseResponse.Success(response.body())
