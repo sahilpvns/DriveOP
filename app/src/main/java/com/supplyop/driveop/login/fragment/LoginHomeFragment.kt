@@ -75,7 +75,7 @@ class LoginHomeFragment : Fragment() {
     private fun doLogin() {
         val username = binding.etEmail.text.toString()
         val pwd = binding.etPassword.text.toString()
-        viewModel.loginUser(email = email, pwd = pwd)
+        viewModel.loginUser(username = username, pwd = pwd)
 
         sharedPreferences = activity?.getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE)
         val editor = sharedPreferences?.edit()
