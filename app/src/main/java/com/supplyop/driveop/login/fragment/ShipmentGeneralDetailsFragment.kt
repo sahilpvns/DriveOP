@@ -90,9 +90,8 @@ class ShipmentGeneralDetailsFragment(
 
         val customDialog = Dialog(requireActivity())
         customDialog.setContentView(R.layout.alertdialog_call)
-        customDialog.window?.setLayout(
-            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
-        )
+        customDialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+
         val yesBtn = customDialog.findViewById<Button>(R.id.btnYes)
         val noBtn = customDialog.findViewById<Button>(R.id.btnNo)
         val tvSureCall = customDialog.findViewById<TextView>(R.id.tvSureCall)
