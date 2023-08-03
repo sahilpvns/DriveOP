@@ -62,4 +62,12 @@
     <string name="close">Close</string>
     <string name="log_out">Log Out</string>
     <string name="let_go">Let’s Go</string>
+    <string name="dispatch_team">Dispatch Team</string>
+    <string name="priority">Priority</string>
+    <string name="items">Items</string>
+    <string name="manifest">Manifest</string>
+    <string name="current_eta">Current ETA</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="customer_number">Customer Number</string>
 </resources>

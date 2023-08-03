@@ -18,4 +18,6 @@
     <color name="shipment_card_view_bg">#4DCAD7F8</color>
     <color name="yellow">#FFA800</color>
     <color name="yellow_20">#33FFA800</color>
+    <color name="red">#D90000</color>
+
 </resources>

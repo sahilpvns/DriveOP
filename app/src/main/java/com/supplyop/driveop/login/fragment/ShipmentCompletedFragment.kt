@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.supplyop.driveop.databinding.FragmentShipmentCompletedBinding
-import com.supplyop.driveop.login.adapter.ShipmentCurrentAdapter
+import com.supplyop.driveop.login.adapter.ShipmentCompletedAdapter
 import com.supplyop.driveop.login.network.ShipmentResponse
 import com.supplyop.driveop.login.network.RetrofitInstance
 import com.supplyop.driveop.login.utils.Utils.withColor
@@ -25,7 +25,7 @@ class ShipmentCompletedFragment : Fragment() {
     private var _binding: FragmentShipmentCompletedBinding? = null
 
     private val shipmentList = ArrayList<ShipmentResponse>()
-    lateinit var shipmentCompletedAdapter: ShipmentCurrentAdapter
+    lateinit var shipmentCompletedAdapter: ShipmentCompletedAdapter
     lateinit var progressDialog: ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +37,7 @@ class ShipmentCompletedFragment : Fragment() {
         savedInstanceState: Bundle?): View {
         _binding = FragmentShipmentCompletedBinding.inflate(inflater, container, false)
 
-        shipmentCompletedAdapter = ShipmentCurrentAdapter(shipmentList)
+        shipmentCompletedAdapter = ShipmentCompletedAdapter(shipmentList)
         binding.rvItemShipmentCompleted.layoutManager = LinearLayoutManager(context)
         binding.rvItemShipmentCompleted.adapter = shipmentCompletedAdapter
         progressDialog = ProgressDialog.show(context, "Loading", "Fetching Data Please wait...", false)
