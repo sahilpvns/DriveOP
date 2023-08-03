@@ -306,6 +306,78 @@
             app:layout_constraintTop_toTopOf="@+id/tvPriority" />
 
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvPartialDelivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Partial Delivery"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPriority" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvAllowed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Allowed"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPartialDelivery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvPartialDelivery" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvServiceType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Service Type"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPartialDelivery" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvStandanrdPremieum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Standanrd Premieum"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvServiceType"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvServiceType" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvSkillSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Skill Set"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvServiceType" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Normal"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSkillSet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvSkillSet" />
+
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvDispatch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -315,7 +387,7 @@
             android:textColor="@android:color/black"
             android:textSize="@dimen/_14sdp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPriority" />
+            app:layout_constraintTop_toBottomOf="@+id/tvSkillSet" />
 
         <ImageView
             android:id="@+id/ivDirection2"
