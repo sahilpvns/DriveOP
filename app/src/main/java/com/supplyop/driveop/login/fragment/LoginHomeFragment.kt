@@ -76,17 +76,24 @@ class LoginHomeFragment : Fragment() {
     }
 
     private fun doLogin() {
-        val username = binding.etEmail.text.toString()
-        val pwd = binding.etPassword.text.toString()
-        viewModel.loginUser(username = username, pwd = pwd)
 
-        sharedPreferences = activity?.getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE)
-        val editor = sharedPreferences?.edit()
+        if (binding.etEmail.length() == 0) {
+            Snackbar.make(binding.root, "Please fill valid Email", Snackbar.LENGTH_LONG).withColor(Color.RED).show()
+        } else if (binding.etPassword.length() == 0) {
+            Snackbar.make(binding.root, "Please fill valid Password", Snackbar.LENGTH_LONG).withColor(Color.RED).show()
+        } else {
+            val username = binding.etEmail.text.toString()
+            val pwd = binding.etPassword.text.toString()
+            viewModel.loginUser(username = username, pwd = pwd)
 
-        editor?.putString(KEY_NAME, binding.etEmail.text.toString())
-        editor?.putString(KEY_NUMBER, binding.etPassword.text.toString())
-        editor?.apply()
-        viewModel.loginUser(username = username, pwd = pwd)
+            sharedPreferences = activity?.getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE)
+            val editor = sharedPreferences?.edit()
+
+            editor?.putString(KEY_NAME, binding.etEmail.text.toString())
+            editor?.putString(KEY_NUMBER, binding.etPassword.text.toString())
+            editor?.apply()
+            viewModel.loginUser(username = username, pwd = pwd)
+        }
 
     }
 
