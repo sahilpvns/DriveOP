@@ -15,6 +15,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.FragmentShipmentGeneralDetailsBinding
+import com.supplyop.driveop.login.activity.ChatActivity
 import com.supplyop.driveop.login.activity.GoogleMapDirectionActivity
 
 
@@ -65,7 +66,8 @@ class ShipmentGeneralDetailsFragment(
                 startActivity(intent)
             }
             ivChat.setOnClickListener {
-                Toast.makeText(context, "Chat", Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, ChatActivity::class.java)
+                startActivity(intent)
             }
             ivCall.setOnClickListener {
                 alertdialogCall()

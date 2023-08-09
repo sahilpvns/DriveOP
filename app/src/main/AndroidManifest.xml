@@ -18,11 +18,9 @@
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/map_api_key" />
-
+        <activity
+            android:name=".login.activity.ChatActivity"
+            android:exported="false" />
         <activity
             android:name=".login.activity.GoogleMapDirectionActivity"
             android:exported="false" />
@@ -48,6 +46,10 @@
         <activity
             android:name=".login.activity.DashboardActivity"
             android:exported="true" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_api_key" />
+
     </application>
 
 </manifest>
