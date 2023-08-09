@@ -15,6 +15,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.FragmentShipmentGeneralDetailsBinding
+import com.supplyop.driveop.login.activity.GoogleMapDirectionActivity
 
 
 class ShipmentGeneralDetailsFragment(
@@ -60,7 +61,8 @@ class ShipmentGeneralDetailsFragment(
             }
 
             ivDirection.setOnClickListener {
-                Toast.makeText(context, "Direction", Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, GoogleMapDirectionActivity::class.java)
+                startActivity(intent)
             }
             ivChat.setOnClickListener {
                 Toast.makeText(context, "Chat", Toast.LENGTH_SHORT).show()
@@ -69,7 +71,8 @@ class ShipmentGeneralDetailsFragment(
                 alertdialogCall()
             }
             ivDirection2.setOnClickListener {
-                Toast.makeText(context, "Direction", Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, GoogleMapDirectionActivity::class.java)
+                startActivity(intent)
             }
             ivCall2.setOnClickListener {
                 alertdialogCall()

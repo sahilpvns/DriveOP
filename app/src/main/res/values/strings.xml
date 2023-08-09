@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">DriveOP</string>
+    <string name="map_api_key">AIzaSyDJpOybIpA06gvRqF3hnB28VLbhVBvzWVA</string>
+
     <string name="title_home">Leaderboard</string>
     <string name="title_dashboard">Shipment</string>
     <string name="title_notifications">Vehicle Inspection</string>
