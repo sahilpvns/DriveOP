@@ -13,6 +13,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.FragmentShipmentGeneralDetailsBinding
 import com.supplyop.driveop.login.activity.ChatActivity
