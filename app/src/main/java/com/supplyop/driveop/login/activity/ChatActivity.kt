@@ -25,8 +25,6 @@ class ChatActivity : AppCompatActivity() {
     private fun toolbarHeader() {
         binding.chatHeader.apply {
             headerTitle.text = String.format("Chat")
-            ivNotification.visibility = View.GONE
-            ivSearch.visibility = View.GONE
             menuItem.setBackgroundResource(R.drawable.arrow_back)
             menuItem.setOnClickListener { finish() }
         }

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -142,9 +143,11 @@ class DashboardActivity : AppCompatActivity() {
         binding.apply {
             dashboardMain.apply {
                 headerTitle.text = String.format("Shipments")
+                ivNotification.visibility = View.VISIBLE
                 ivNotification.setOnClickListener {
                     Toast.makeText(this@DashboardActivity, "Notification", Toast.LENGTH_SHORT).show()
                 }
+                ivSearch.visibility= View.VISIBLE
                 ivSearch.setOnClickListener {
                     Toast.makeText(this@DashboardActivity, "Search", Toast.LENGTH_SHORT).show()
                 }
