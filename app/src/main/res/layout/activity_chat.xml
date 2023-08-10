@@ -25,4 +25,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chatHeader" />
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etChat"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40ssp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:background="@drawable/shape_edittext_login"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/type_message"
+        android:inputType="text"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:paddingStart="@dimen/_15ssp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toStartOf="@+id/ivSendMsg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivMic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_80sdp"
+        android:background="@drawable/ic_mic"
+        app:layout_constraintBottom_toBottomOf="@+id/etChat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etChat" />
+
+    <ImageView
+        android:id="@+id/ivSendMsg"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:background="@drawable/ic_send_button"
+        app:layout_constraintBottom_toBottomOf="@+id/etChat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etChat" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
