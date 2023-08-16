@@ -3,6 +3,7 @@ package com.supplyop.driveop.login.activity
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
@@ -11,6 +12,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.ActivityGoogleMapBinding
+import com.supplyop.driveop.login.adapter.MapRouteAdapter
 
 
 class GoogleMapActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -32,6 +34,8 @@ class GoogleMapActivity : AppCompatActivity(), OnMapReadyCallback {
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
 
+        binding?.rvMapRoute?.adapter = MapRouteAdapter()
+        binding?.rvMapRoute?.layoutManager = LinearLayoutManager(this)
 
     }
 

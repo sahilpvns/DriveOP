@@ -19,5 +19,7 @@
     <color name="yellow">#FFA800</color>
     <color name="yellow_20">#33FFA800</color>
     <color name="red">#D90000</color>
+    <color name="light_black_3">#333333</color>
+
 
 </resources>
