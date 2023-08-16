@@ -28,11 +28,9 @@ class GoogleMapActivity : AppCompatActivity(), OnMapReadyCallback {
         supportActionBar?.hide()
         toolbarMap()
 
-
         mapView = findViewById(R.id.mapView)
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
-
 
 
     }
