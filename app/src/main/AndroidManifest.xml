@@ -26,7 +26,7 @@
             android:name=".login.activity.ChatActivity"
             android:exported="false" />
         <activity
-            android:name=".login.activity.GoogleMapDirectionActivity"
+            android:name=".login.activity.GoogleMapActivity"
             android:exported="false" />
         <activity
             android:name=".login.activity.ShipmentDetailsActivity"

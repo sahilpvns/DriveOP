@@ -13,11 +13,10 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.FragmentShipmentGeneralDetailsBinding
 import com.supplyop.driveop.login.activity.ChatActivity
-import com.supplyop.driveop.login.activity.GoogleMapDirectionActivity
+import com.supplyop.driveop.login.activity.GoogleMapActivity
 
 
 class ShipmentGeneralDetailsFragment(
@@ -63,7 +62,7 @@ class ShipmentGeneralDetailsFragment(
             }
 
             ivDirection.setOnClickListener {
-                val intent = Intent(context, GoogleMapDirectionActivity::class.java)
+                val intent = Intent(context, GoogleMapActivity::class.java)
                 startActivity(intent)
             }
             ivChat.setOnClickListener {
@@ -74,7 +73,7 @@ class ShipmentGeneralDetailsFragment(
                 alertdialogCall()
             }
             ivDirection2.setOnClickListener {
-                val intent = Intent(context, GoogleMapDirectionActivity::class.java)
+                val intent = Intent(context, GoogleMapActivity::class.java)
                 startActivity(intent)
             }
             ivCall2.setOnClickListener {
