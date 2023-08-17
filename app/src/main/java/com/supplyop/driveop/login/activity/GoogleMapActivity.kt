@@ -34,8 +34,10 @@ class GoogleMapActivity : AppCompatActivity(), OnMapReadyCallback {
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
 
-        binding?.rvMapRoute?.adapter = MapRouteAdapter()
-        binding?.rvMapRoute?.layoutManager = LinearLayoutManager(this)
+        binding?.apply {
+            rvMapRoute.adapter = MapRouteAdapter()
+            rvMapRoute.layoutManager = LinearLayoutManager(this@GoogleMapActivity)
+        }
 
     }
 
