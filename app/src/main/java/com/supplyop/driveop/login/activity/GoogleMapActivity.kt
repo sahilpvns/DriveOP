@@ -51,11 +51,11 @@ class GoogleMapActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    override fun onMapReady(map: GoogleMap) {
+    override fun onMapReady(map: GoogleMap?) {
 
         val location = LatLng(28.46995023050021, 77.01925805425242)
-        map.addMarker(MarkerOptions().position(location).title("Gurugram"))
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 12.0f))
+        map?.addMarker(MarkerOptions().position(location).title("Gurugram"))
+        map?.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 12.0f))
     }
 
     override fun onResume() {

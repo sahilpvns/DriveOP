@@ -19,7 +19,7 @@
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_5sdp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Suggested Route 1 "
+            android:text="@string/suggested_route_1"
             android:textColor="@android:color/black"
             android:textSize="@dimen/_14sdp"
             app:layout_constraintEnd_toStartOf="@+id/tvTraffic"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_16sdp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Heavy Traffic"
+            android:text="@string/heavy_traffic"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="@dimen/_14sdp"
             app:layout_constraintBottom_toBottomOf="@+id/tvSuggestedRoute"
@@ -46,8 +46,7 @@
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_5sdp"
             android:fontFamily="@font/poppins_regular"
-            android:text="House- 238, 3rd floor, 10 Poorvimarg
-Near blinkit warehouse Golf course road, Gurugram, Haryana Pin- 283739"
+            android:text="@string/route_address"
             android:textColor="@color/light_black_3"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintEnd_toStartOf="@+id/ivRoute"

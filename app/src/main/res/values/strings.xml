@@ -73,4 +73,7 @@
     <string name="yes">Yes</string>
     <string name="customer_number">Customer Number</string>
     <string name="type_message">Type a message...</string>
+    <string name="route_address">House- 238, 3rd floor, 10 Poorvimarg Near blinkit warehouse Golf course road, Gurugram, Haryana Pin- 283739</string>
+    <string name="heavy_traffic">Heavy Traffic</string>
+    <string name="suggested_route_1">Suggested Route 1</string>
 </resources>

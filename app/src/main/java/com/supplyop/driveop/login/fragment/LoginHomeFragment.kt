@@ -5,14 +5,17 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
+import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.textfield.TextInputEditText
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.FragmentLoginHomeBinding
 import com.supplyop.driveop.login.network.BaseResponse
@@ -36,9 +39,14 @@ class LoginHomeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+        savedInstanceState: Bundle?): View {
         _binding = FragmentLoginHomeBinding.inflate(inflater, container, false)
+
+
+        binding.ivHidePwd.setOnClickListener {
+            togglePasswordVisibility(binding.etPassword)
+            toggleEyeIcon(binding.ivHidePwd, binding.etPassword.transformationMethod !is PasswordTransformationMethod)
+        }
 
 
         viewModel.loginResult.observe(viewLifecycleOwner) {
@@ -73,6 +81,20 @@ class LoginHomeFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    private fun toggleEyeIcon(ivHidePwd: ImageView, showPassword: Boolean) {
+        if (showPassword) {
+            ivHidePwd.setImageResource(R.drawable.visibility_on_pwd)
+        } else {
+            ivHidePwd.setImageResource(R.drawable.visibility_off_pwd)
+        }
+    }
+
+    private fun togglePasswordVisibility(etPassword: TextInputEditText) {
+        val isPasswordVisible = etPassword.transformationMethod !is PasswordTransformationMethod
+        etPassword.transformationMethod = if (isPasswordVisible) PasswordTransformationMethod() else null
+        etPassword.setSelection(etPassword.text?.length ?: 0)
     }
 
     private fun doLogin() {
