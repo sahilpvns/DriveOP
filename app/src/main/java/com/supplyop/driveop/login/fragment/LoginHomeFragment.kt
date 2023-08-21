@@ -75,12 +75,16 @@ class LoginHomeFragment : Fragment() {
         }
 
         binding.tvForgotPassword.setOnClickListener {
-            val fragment: Fragment = ForgotPasswordFragment()
-            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
+            forgotPasswordFragment()
         }
 
         return binding.root
+    }
+
+    private fun forgotPasswordFragment() {
+        val fragment: Fragment = ForgotPasswordFragment()
+        val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+        fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
     }
 
     private fun toggleEyeIcon(ivHidePwd: ImageView, showPassword: Boolean) {
