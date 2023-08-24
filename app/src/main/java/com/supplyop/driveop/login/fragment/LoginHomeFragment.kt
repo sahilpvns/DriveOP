@@ -18,11 +18,11 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.supplyop.driveop.R
 import com.supplyop.driveop.databinding.FragmentLoginHomeBinding
+import com.supplyop.driveop.login.activity.DashboardActivity
 import com.supplyop.driveop.login.network.BaseResponse
 import com.supplyop.driveop.login.network.LoginResponse
-import com.supplyop.driveop.login.viewmodel.LoginViewModel
-import com.supplyop.driveop.login.activity.DashboardActivity
 import com.supplyop.driveop.login.utils.Utils.withColor
+import com.supplyop.driveop.login.viewmodel.LoginViewModel
 
 class LoginHomeFragment : Fragment() {
     private val binding get() = _binding!!
@@ -103,22 +103,32 @@ class LoginHomeFragment : Fragment() {
 
     private fun doLogin() {
 
-        if (binding.etEmail.length() == 0) {
-            Snackbar.make(binding.root, "Please fill valid Email", Snackbar.LENGTH_LONG).withColor(Color.RED).show()
-        } else if (binding.etPassword.length() == 0) {
-            Snackbar.make(binding.root, "Please fill valid Password", Snackbar.LENGTH_LONG).withColor(Color.RED).show()
-        } else {
-            val username = binding.etEmail.text.toString()
-            val pwd = binding.etPassword.text.toString()
-            viewModel.loginUser(username = username, pwd = pwd)
+        binding.apply {
+            if (etEmail.length() == 0) {
+                etEmail.requestFocus()
+                tvEmailErrorTxt.visibility = View.VISIBLE
+                tvPasswordTxt.visibility = View.GONE
+            } else if (etPassword.length() == 0) {
+                etPassword.requestFocus()
+                tvPasswordTxt.visibility = View.VISIBLE
+                tvEmailErrorTxt.visibility = View.GONE
+            } else {
+                tvPasswordTxt.visibility = View.GONE
+                tvEmailErrorTxt.visibility = View.GONE
 
-            sharedPreferences = activity?.getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE)
-            val editor = sharedPreferences?.edit()
+                                val username = etEmail.text.toString()
+                val pwd = etPassword.text.toString()
+                viewModel.loginUser(username = username, pwd = pwd)
 
-            editor?.putString(KEY_NAME, binding.etEmail.text.toString())
-            editor?.putString(KEY_NUMBER, binding.etPassword.text.toString())
-            editor?.apply()
-            viewModel.loginUser(username = username, pwd = pwd)
+                sharedPreferences = activity?.getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE)
+                val editor = sharedPreferences?.edit()
+
+                editor?.putString(KEY_NAME, etEmail.text.toString())
+                editor?.putString(KEY_NUMBER, etPassword.text.toString())
+                editor?.apply()
+                viewModel.loginUser(username = username, pwd = pwd)
+
+            }
         }
 
     }

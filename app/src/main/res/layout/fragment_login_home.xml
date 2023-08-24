@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     android:background="@android:color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".login.fragment.LoginHomeFragment">
@@ -70,6 +71,21 @@
         app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
     <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvEmailErrorTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16ssp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Enter a email address"
+        android:textColor="@color/red"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,7 +96,7 @@
         android:textColor="@color/light_second_black"
         android:textSize="@dimen/_14ssp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailErrorTxt" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/etPassword"
@@ -98,6 +114,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvPasswordTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16ssp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Enter a password"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
     <ImageView
         android:id="@+id/ivHidePwd"
         android:layout_width="wrap_content"
@@ -106,7 +137,7 @@
         android:layout_marginEnd="@dimen/_32sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/etPassword"
-        app:layout_constraintTop_toTopOf="@+id/etPassword"/>
+        app:layout_constraintTop_toTopOf="@+id/etPassword" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvForgotPassword"
