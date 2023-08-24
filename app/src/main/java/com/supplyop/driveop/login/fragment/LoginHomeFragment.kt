@@ -116,7 +116,8 @@ class LoginHomeFragment : Fragment() {
                 tvPasswordTxt.visibility = View.GONE
                 tvEmailErrorTxt.visibility = View.GONE
 
-                                val username = etEmail.text.toString()
+
+                val username = etEmail.text.toString()
                 val pwd = etPassword.text.toString()
                 viewModel.loginUser(username = username, pwd = pwd)
 
