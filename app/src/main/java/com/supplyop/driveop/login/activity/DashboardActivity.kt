@@ -152,10 +152,11 @@ class DashboardActivity : AppCompatActivity() {
                     Toast.makeText(this@DashboardActivity, "Search", Toast.LENGTH_SHORT).show()
                 }
                 menuItem.setOnClickListener {
-                    if (!drawerLayout.isDrawerOpen(GravityCompat.START)) drawerLayout.openDrawer(GravityCompat.START)
-                    else {
+                    if (!drawerLayout.isDrawerOpen(GravityCompat.START))
+                        drawerLayout.openDrawer(GravityCompat.START)
+                    else
                         drawerLayout.closeDrawer(GravityCompat.END)
-                    }
+
                 }
             }
         }

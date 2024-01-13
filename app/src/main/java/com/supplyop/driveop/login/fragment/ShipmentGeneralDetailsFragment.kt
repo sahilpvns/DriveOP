@@ -92,7 +92,6 @@ class ShipmentGeneralDetailsFragment(
     }
 
     private fun alertdialogCall() {
-
         val customDialog = Dialog(requireActivity())
         customDialog.setContentView(R.layout.alertdialog_call)
         customDialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
