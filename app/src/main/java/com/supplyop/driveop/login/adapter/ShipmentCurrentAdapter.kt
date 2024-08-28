@@ -24,66 +24,63 @@ class ShipmentCurrentAdapter(private val shipmentData: List<ShipmentResponse>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-
         val shipment = shipmentData[position]
-        holder.itemBinding.apply {
-
-            tvDetails.setOnClickListener {
-
-                val intent = Intent(it.context, ShipmentDetailsActivity::class.java)
-                intent.putExtra("shipmentId", shipment.shipmentId)
-                intent.putExtra("date", shipment.date)
-                intent.putExtra("address", shipment.address)
-                intent.putExtra("truckProgress", shipment.truckProgress)
-                it.context.startActivity(intent)
-
-            }
-
-            tvShipment.setOnClickListener {
-                if (shipment.isSelector) {
-                    tvShipment.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.arrow_down, 0)
-                    groupIds.visibility = View.GONE
-                    shipment.isSelector = false
-                } else {
-                    tvShipment.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.arrow_up, 0)
-                    groupIds.visibility = View.VISIBLE
-                    shipment.isSelector = true
-                }
-            }
-
-            tvShipment.text = shipment.shipmentId
-            tvDateTime.text = shipment.date
-            tvAddress.text = shipment.address
-
-            progressTruck.progress = shipment.truckProgress
-            progressTruck.isEnabled = false
-
-            when (progressTruck.progress) {
-                100 -> {
-                    progressTruck.progressTintList = ColorStateList.valueOf(Color.GREEN)
-                }
-                in 10..30 -> {
-                    progressTruck.progressTintList = ColorStateList.valueOf(Color.RED)
-                }
-                else -> {
-                    progressTruck.progressTintList = ColorStateList.valueOf(Color.YELLOW)
-                }
-            }
-
-
-
-
-        }
-
-
+        holder.dataBind(shipment)
     }
 
     override fun getItemCount(): Int {
         return shipmentData.size
     }
 
-    inner class ViewHolder(var itemBinding: ItemShipmentBinding) : RecyclerView.ViewHolder(itemBinding.root)
+    class ViewHolder(var binding: ItemShipmentBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun dataBind(shipment: ShipmentResponse) {
+            binding.apply {
+                tvDetails.setOnClickListener {
+                    val intent = Intent(it.context, ShipmentDetailsActivity::class.java)
+                    intent.putExtra("shipmentId", shipment.shipmentId)
+                    intent.putExtra("date", shipment.date)
+                    intent.putExtra("address", shipment.address)
+                    intent.putExtra("truckProgress", shipment.truckProgress)
+                    it.context.startActivity(intent)
+                }
+
+                tvShipment.setOnClickListener {
+                    if (shipment.isSelector) {
+                        tvShipment.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.arrow_down, 0)
+                        groupIds.visibility = View.GONE
+                        shipment.isSelector = false
+                    } else {
+                        tvShipment.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.arrow_up, 0)
+                        groupIds.visibility = View.VISIBLE
+                        shipment.isSelector = true
+                    }
+                }
+
+                tvShipment.text = shipment.shipmentId
+                tvDateTime.text = shipment.date
+                tvAddress.text = shipment.address
+
+                progressTruck.progress = shipment.truckProgress
+                progressTruck.isEnabled = false
+
+                when (progressTruck.progress) {
+                    100 -> {
+                        progressTruck.progressTintList = ColorStateList.valueOf(Color.GREEN)
+                    }
+
+                    in 10..30 -> {
+                        progressTruck.progressTintList = ColorStateList.valueOf(Color.RED)
+                    }
+
+                    else -> {
+                        progressTruck.progressTintList = ColorStateList.valueOf(Color.YELLOW)
+                    }
+                }
+            }
+
+
+        }
+    }
 }
 
 
