@@ -6,10 +6,10 @@ data class LoginResponse(
     @SerializedName("code") var code: Int,
     @SerializedName("message") var message: String,
     @SerializedName("data") var data: Data,
-) {
-    data class Data(
-        @SerializedName("organizationName") var organizationName: String,
-        @SerializedName("organizationId") var organizationId: Int,
-        @SerializedName("token") var token: String
-    )
-}
+)
+
+data class Data(
+    @SerializedName("organizationName") var organizationName: String,
+    @SerializedName("organizationId") var organizationId: Int,
+    @SerializedName("token") var token: String
+)

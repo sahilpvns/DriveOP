@@ -61,6 +61,7 @@ class ShipmentCurrentAdapter(private val shipmentData: List<ShipmentResponse>) :
                 tvDateTime.text = shipment.date
                 tvAddress.text = shipment.address
 
+
                 progressTruck.progress = shipment.truckProgress
                 progressTruck.isEnabled = false
 
