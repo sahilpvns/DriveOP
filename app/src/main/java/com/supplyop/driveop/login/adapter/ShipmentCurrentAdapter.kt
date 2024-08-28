@@ -36,11 +36,12 @@ class ShipmentCurrentAdapter(private val shipmentData: List<ShipmentResponse>) :
         fun dataBind(shipment: ShipmentResponse) {
             binding.apply {
                 tvDetails.setOnClickListener {
-                    val intent = Intent(it.context, ShipmentDetailsActivity::class.java)
-                    intent.putExtra("shipmentId", shipment.shipmentId)
-                    intent.putExtra("date", shipment.date)
-                    intent.putExtra("address", shipment.address)
-                    intent.putExtra("truckProgress", shipment.truckProgress)
+                    val intent = Intent(it.context, ShipmentDetailsActivity::class.java).apply {
+                        putExtra("shipmentId", shipment.shipmentId)
+                        putExtra("date", shipment.date)
+                        putExtra("address", shipment.address)
+                        putExtra("truckProgress", shipment.truckProgress)
+                    }
                     it.context.startActivity(intent)
                 }
 
